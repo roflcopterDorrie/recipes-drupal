@@ -1,14 +1,17 @@
-Installation
+# Installation
+
+## Development installation
 
 Install DDEV
 https://docs.ddev.com/en/stable/users/install/ddev-installation/
 
-# Install a production ready version of the site
+## Production installation
 
-Create a folder.
-Create a docker-compose.yml file 
+Create a new folder for your production installation. Create the following files.
 
-```
+### Create a `docker-compose.yml` file 
+
+```yaml
 services:
   # The Drupal image you built with GitHub Actions
   drupal:
@@ -50,9 +53,9 @@ volumes:
   drupal_code: 
 ```
 
-Create a nginx.conf file
+### Create a `nginx.conf` file
 
-```
+```conf
 server {
     listen 80;
     server_name localhost;
@@ -107,6 +110,25 @@ server {
 }
 ```
 
-Then run `docker compose up -d`
+### Create a `.env` file
 
-This should build a production ready version of the site for you.
+```
+SOME VARIABLES IN HERE
+```
+
+
+### Build and config
+
+Start the docker containers and pull the recipe docker image.  
+`docker compose up -d`
+
+Go through the basic site installation on drupal.  
+http://localhost/
+
+Import the configuration into the new database  
+`docker compose exec drupal drush cim -y`
+
+Rebuild cache  
+`docker compose exec drupal drush cr`
+
+### The site should be ready to use!

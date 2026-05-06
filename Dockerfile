@@ -8,13 +8,16 @@ RUN composer install --no-dev --optimize-autoloader --no-interaction --ignore-pl
 
 # STAGE 2: Production (The "Plate")
 FROM drupal:11-fpm-alpine
-# Change this to match the official Drupal image path
 WORKDIR /opt/drupal
 
-# Copy the optimized vendor folder from the builder
+# 1. Copy the vendor folder (The engine)
 COPY --from=builder /opt/drupal/vendor /opt/drupal/vendor  
 
-# Copy your site code
+# 2. NEW: Copy the modules and themes downloaded by Composer in Stage 1
+COPY --from=builder /opt/drupal/web/modules/contrib /opt/drupal/web/modules/contrib
+COPY --from=builder /opt/drupal/web/themes/contrib /opt/drupal/web/themes/contrib
+
+# 3. Copy your custom code (your themes, your modules, and settings.php)
 COPY . /opt/drupal
 
 # Clean up

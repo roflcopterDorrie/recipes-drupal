@@ -1,0 +1,25 @@
+# --- COMPOSER & DEPENDENCIES ---
+# We ignore these because  will run 'composer install'
+/vendor/
+/web/core/
+/web/modules/contrib/
+/web/themes/contrib/
+/web/profiles/contrib/
+/web/libraries/
+
+# --- DRUPAL SENSITIVE FILES ---
+/web/sites/*/settings.php
+/web/sites/*/settings.local.php
+/web/sites/*/services.yml
+/web/sites/*/services.local.yml
+
+# --- DRUPAL USER CONTENT ---
+# Local uploads should never be committed
+/web/sites/*/files/
+/web/sites/*/private/
+
+# --- OS & IDE FILES ---
+.DS_Store
+.idea/
+.vscode/
+Thumbs.db

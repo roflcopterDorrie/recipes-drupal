@@ -1,30 +1,31 @@
 # STAGE 1: Optimization (The "Chef")
 FROM composer:2 as builder
-# Change this to match the official Drupal image path
 WORKDIR /opt/drupal 
 COPY composer.json composer.lock ./
-
 RUN composer install --no-dev --optimize-autoloader --no-interaction --ignore-platform-reqs
+# Ensure index.php and .htaccess are actually created
+RUN composer drupal:scaffold
 
 # STAGE 2: Production (The "Plate")
 FROM drupal:11-fpm-alpine
 WORKDIR /opt/drupal
 
-# 1. Copy the vendor folder (The engine)
 COPY --from=builder /opt/drupal/vendor /opt/drupal/vendor  
-
-# 2. NEW: Copy the modules and themes downloaded by Composer in Stage 1
 COPY --from=builder /opt/drupal/web/modules/contrib /opt/drupal/web/modules/contrib
 COPY --from=builder /opt/drupal/web/themes/contrib /opt/drupal/web/themes/contrib
 
-# 3. Copy your custom code (your themes, your modules, and settings.php)
-COPY . /opt/drupal
+COPY web/modules/custom /opt/drupal/web/modules/custom
+COPY web/themes/custom /opt/drupal/web/themes/custom
+COPY web/sites/default/settings.php /opt/drupal/web/sites/default/settings.php
+COPY config /opt/drupal/config
 
-# Clean up
-RUN rm -rf /opt/drupal/.ddev /opt/drupal/.git
+COPY --from=builder /opt/drupal/web/index.php /opt/drupal/web/index.php
+COPY --from=builder /opt/drupal/web/.htaccess /opt/drupal/web/.htaccess
 
-# Ensure the files directory exists in the correct location
-RUN mkdir -p /opt/drupal/web/sites/default/files
-
-# Set permissions
-RUN chown -R www-data:www-data /opt/drupal/web/sites/default/files
+# Finalize permissions - added the 'custom' and 'config' folders here
+RUN mkdir -p /opt/drupal/web/sites/default/files && \
+    chown -R www-data:www-data /opt/drupal/web/sites/default/files && \
+    chown -R www-data:www-data /opt/drupal/web/modules/custom && \
+    chown -R www-data:www-data /opt/drupal/web/themes/custom && \
+    chown -R www-data:www-data /opt/drupal/config && \
+    chown www-data:www-data /opt/drupal/web/sites/default/settings.php

@@ -1,26 +1,27 @@
 # STAGE 1: Optimization (The "Chef")
 FROM composer:2 as builder
-WORKDIR /var/www/html
+# Change this to match the official Drupal image path
+WORKDIR /opt/drupal 
 COPY composer.json composer.lock ./
 
-# This creates the lean, production-ready vendor folder
 RUN composer install --no-dev --optimize-autoloader --no-interaction --ignore-platform-reqs
 
 # STAGE 2: Production (The "Plate")
 FROM drupal:11-fpm-alpine
-WORKDIR /var/www/html
+# Change this to match the official Drupal image path
+WORKDIR /opt/drupal
 
 # Copy the optimized vendor folder from the builder
-COPY --from=builder /var/www/html/vendor /var/www/html/vendor  
+COPY --from=builder /opt/drupal/vendor /opt/drupal/vendor  
 
-# Copy your site code (themes, modules, etc.)
-COPY . /var/www/html
+# Copy your site code
+COPY . /opt/drupal
 
-# Clean up DDEV and Git leftovers
-RUN rm -rf /var/www/html/.ddev /var/www/html/.git
+# Clean up
+RUN rm -rf /opt/drupal/.ddev /opt/drupal/.git
 
-# Make sure default files exists.
-RUN mkdir -p /var/www/html/web/sites/default/files
+# Ensure the files directory exists in the correct location
+RUN mkdir -p /opt/drupal/web/sites/default/files
 
-# Ensure Drupal can write to the files directory
-RUN chown -R www-data:www-data /var/www/html/web/sites/default/files
+# Set permissions
+RUN chown -R www-data:www-data /opt/drupal/web/sites/default/files

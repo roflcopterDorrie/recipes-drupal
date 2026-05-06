@@ -22,6 +22,10 @@ COPY config /opt/drupal/config
 COPY --from=builder /opt/drupal/web/index.php /opt/drupal/web/index.php
 COPY --from=builder /opt/drupal/web/.htaccess /opt/drupal/web/.htaccess
 
+# Ensure everything in the web root is readable
+RUN chmod -R 755 /opt/drupal/web && \
+    chmod -R 755 /opt/drupal/vendor
+
 # Finalize permissions - added the 'custom' and 'config' folders here
 RUN mkdir -p /opt/drupal/web/sites/default/files && \
     chown -R www-data:www-data /opt/drupal/web/sites/default/files && \

@@ -7,7 +7,7 @@ COPY composer.json composer.lock ./
 RUN composer install --no-dev --optimize-autoloader --no-interaction --ignore-platform-reqs
 
 # STAGE 2: Production (The "Plate")
-FROM drupal:10-fpm-alpine
+FROM drupal:11-fpm-alpine
 WORKDIR /var/www/html
 
 # Copy the optimized vendor folder from the builder
@@ -18,6 +18,9 @@ COPY . /var/www/html
 
 # Clean up DDEV and Git leftovers
 RUN rm -rf /var/www/html/.ddev /var/www/html/.git
+
+# Make sure default files exists.
+RUN mkdir -p /var/www/html/web/sites/default/files
 
 # Ensure Drupal can write to the files directory
 RUN chown -R www-data:www-data /var/www/html/web/sites/default/files

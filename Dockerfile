@@ -4,7 +4,7 @@ WORKDIR /app
 COPY composer.json composer.lock ./
 
 # This creates the lean, production-ready vendor folder
-RUN composer install --no-dev --optimize-autoloader --no-interaction
+RUN composer install --no-dev --optimize-autoloader --no-interaction --ignore-platform-reqs
 
 # STAGE 2: Production (The "Plate")
 FROM drupal:10-fpm-alpine

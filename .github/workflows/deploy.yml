@@ -7,6 +7,7 @@ on:
 env:
   REGISTRY: ghcr.io
   REPO: ${{ github.repository }}
+  REPO_LC: "repo_lower"
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -37,5 +38,5 @@ jobs:
           push: true
           # This tags the image as 'latest' and with the specific Git commit hash
           tags: |
-            ${{ env.REGISTRY }}/${{ env.REPO }}:latest
-            ${{ env.REGISTRY }}/${{ env.REPO }}:${{ github.sha }}
+            ${{ env.REGISTRY }}/${{ env.REPO_LC }}:latest
+            ${{ env.REGISTRY }}/${{ env.REPO_LC }}:${{ github.sha }}

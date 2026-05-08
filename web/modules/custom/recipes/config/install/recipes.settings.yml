@@ -1,0 +1,4 @@
+_core:
+  default_config_hash: pwwafZz6U2Uap8hAuBRcUyyo_oGRNFnnp7W-KW2plGM
+prompt: "Extract all recipe information form the following text: @website_text\r\nUse this json schema to format the data: @schema\r\nUse this taxonomy for categories: @ingredient_aisle_taxonomy\r\n  Rules:\r\n  - Do not paraphrase or invent ingredients or steps.\r\n  - Do not include commentary, explanation, or formatting outside the JSON.\r\n  - The output must be valid JSON that PHP’s json_decode() can parse.\r\n  \r\n  Return only the JSON string."
+

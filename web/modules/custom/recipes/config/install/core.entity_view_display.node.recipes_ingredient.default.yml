@@ -1,0 +1,51 @@
+uuid: f334d1f6-4ead-445e-ad2e-be1ccb0fa493
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.recipes_ingredient.field_recipes_ingredient
+    - field.field.node.recipes_ingredient.field_recipes_ingredient_aisle
+    - field.field.node.recipes_ingredient.field_recipes_ingredient_amount
+    - node.type.recipes_ingredient
+  module:
+    - user
+  enforced:
+    module:
+      - recipes
+_core:
+  default_config_hash: rRdsiU4Rbe5oGxATf3UXlC4ypgX3uCKOyiGUxxPYbKs
+id: node.recipes_ingredient.default
+targetEntityType: node
+bundle: recipes_ingredient
+mode: default
+content:
+  field_recipes_ingredient:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_recipes_ingredient_aisle:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_recipes_ingredient_amount:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

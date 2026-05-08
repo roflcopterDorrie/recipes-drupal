@@ -1,0 +1,14 @@
+recipes.quick_create:
+  path: '/admin/recipes/quick-create'
+  defaults:
+    _title: 'Quickly create recipe'
+    _form: '\Drupal\recipes\Form\QuickCreate'
+  requirements:
+    _permission: 'access content'
+recipes.settings:
+  path: '/admin/config/system/settings'
+  defaults:
+    _title: 'Settings'
+    _form: 'Drupal\recipes\Form\SettingsForm'
+  requirements:
+    _permission: 'administer site configuration'

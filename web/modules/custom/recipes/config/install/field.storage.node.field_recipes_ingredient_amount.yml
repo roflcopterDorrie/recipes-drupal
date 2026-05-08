@@ -1,0 +1,26 @@
+uuid: 3a08c336-c5df-402d-9bc5-af65c0c80c2d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+  enforced:
+    module:
+      - recipes
+_core:
+  default_config_hash: kfxFsw_o4Qmx2L9QywOO4JKmNC0IStyyd3wHwW-hGC8
+id: node.field_recipes_ingredient_amount
+field_name: field_recipes_ingredient_amount
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

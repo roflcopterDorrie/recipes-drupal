@@ -1,0 +1,24 @@
+uuid: fa8d67cf-87bc-42a3-a35c-706435238fbb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_recipes_ingredient_amount
+    - node.type.recipes_ingredient
+  enforced:
+    module:
+      - recipes
+_core:
+  default_config_hash: y8LQMMl-4S_ocqFWpUXt4Za_nw86uUeCULWLXvwL8nM
+id: node.recipes_ingredient.field_recipes_ingredient_amount
+field_name: field_recipes_ingredient_amount
+entity_type: node
+bundle: recipes_ingredient
+label: Amount
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

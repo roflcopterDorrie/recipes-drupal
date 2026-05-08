@@ -1,0 +1,8 @@
+{
+    "name": "custom/recipes",
+    "description": "Recipes module",
+    "type": "drupal-module",
+    "require": {
+        "opis/json-schema": "^2.0"
+    }
+}

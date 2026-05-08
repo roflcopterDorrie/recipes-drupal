@@ -1,0 +1,34 @@
+uuid: fa979ff9-f966-4411-a2f6-7c85c0d992e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_recipes_ingredient
+    - node.type.recipes_ingredient
+    - taxonomy.vocabulary.recipes_ingredient
+  enforced:
+    module:
+      - recipes
+_core:
+  default_config_hash: rKhhKCk95kfiNSuKbL9UaiLqfKYWZ28eZXArGI_lUNc
+id: node.recipes_ingredient.field_recipes_ingredient
+field_name: field_recipes_ingredient
+entity_type: node
+bundle: recipes_ingredient
+label: Ingredient
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      recipes_ingredient: recipes_ingredient
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

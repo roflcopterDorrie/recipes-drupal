@@ -1,0 +1,14 @@
+uuid: 84c39010-74fe-40c4-91db-69657aab89df
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - recipes
+_core:
+  default_config_hash: uwlbXIsYz5tUPT-gQCEtZBqx-kRRuUXG0Fruv9sKtOs
+name: Ingredient
+vid: recipes_ingredient
+description: null
+weight: 0
+new_revision: false

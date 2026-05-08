@@ -1,0 +1,87 @@
+<?php 
+
+use Drupal\taxonomy\Entity\Term;
+
+/**
+ * Implements hook_install().
+ */
+function recipes_install() {
+  $categories = [
+    [
+        'name' => 'Fresh Fruits and Vegetables',
+        'description' => 'All fresh produce found in the refrigerated produce section. Includes fruits, vegetables, leafy greens, mushrooms, and fresh herbs.',
+    ],
+    [
+        'name' => 'Canned Vegetables',
+        'description' => 'Shelf stable vegetables in cans or jars. Includes tomatoes, corn, beans, beetroot, artichokes, etc.',
+    ],
+    [
+        'name' => 'Herbs',
+        'description' => 'Fresh or packaged herbs. Includes parsley, coriander, basil, dill, mint, etc.',
+    ],
+    [
+        'name' => 'Spices and Seasoning',
+        'description' => 'Dry spices, spice blends, salts, peppers, rubs, and seasoning packets. Includes paprika, cumin, curry powder, garlic powder, chilli flakes.',
+    ],
+    [
+        'name' => 'Pasta',
+        'description' => 'All dried pasta shapes and noodles (non Asian). Includes spaghetti, penne, fusilli, lasagne sheets.',
+    ],
+    [
+        'name' => 'Rice',
+        'description' => 'All rice varieties. Includes jasmine, basmati, brown, arborio, sushi rice.',
+    ],
+    [
+        'name' => 'Other Grains',
+        'description' => 'Non rice grains and grain like products. Includes quinoa, couscous, barley, bulgur, farro.',
+    ],
+    [
+        'name' => 'Legumes',
+        'description' => 'Dried or canned beans, lentils, chickpeas, and peas. Includes kidney beans, black beans, lentils, chickpeas.',
+    ],
+    [
+        'name' => 'Nuts & Seeds',
+        'description' => 'Raw, roasted, or packaged nuts and seeds. Includes almonds, walnuts, chia, flax, sesame.',
+    ],
+    [
+        'name' => 'Plant based Proteins',
+        'description' => 'Refrigerated or shelf stable plant proteins. Includes tofu, tempeh, seitan, plant based meat alternatives.',
+    ],
+    [
+        'name' => 'Plant based Milk',
+        'description' => 'Non dairy milks found in the long life or refrigerated milk section. Includes almond, soy, oat, coconut, rice milk.',
+    ],
+    [
+        'name' => 'Oils',
+        'description' => 'Cooking oils and specialty oils. Includes olive oil, vegetable oil, sesame oil, avocado oil.',
+    ],
+    [
+        'name' => 'Sweeteners',
+        'description' => 'Sugars and natural sweeteners. Includes white sugar, brown sugar, honey, maple syrup, agave.',
+    ],
+    [
+        'name' => 'Baking Ingredients',
+        'description' => 'Dry baking goods and additives. Includes flour, baking powder, yeast, cocoa, chocolate chips.',
+    ],
+    [
+        'name' => 'Condiments',
+        'description' => 'Sauces, spreads, dressings, and flavour enhancers. Includes mustard, ketchup, mayonnaise, soy sauce, hot sauce.',
+    ],
+    [
+        'name' => 'Stock',
+        'description' => 'Liquid or powdered stocks and broths. Includes vegetable stock, chicken stock, bouillon cubes.',
+    ],
+    [
+        'name' => 'Asian Ingredients',
+        'description' => 'Items typically found in the Asian or international aisle. Includes soy sauce, coconut milk, curry pastes, rice noodles, mirin, fish sauce.',
+    ],
+];
+
+  foreach ($categories as $category) {
+    Term::create([
+      'name' => $category['name'],
+      'description' => $category['description'],
+      'vid' => 'recipes_ingredient_aisle',
+    ])->save();
+  }
+}

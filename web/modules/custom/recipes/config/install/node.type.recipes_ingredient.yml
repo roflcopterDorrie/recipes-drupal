@@ -1,0 +1,23 @@
+uuid: 2f5edcd5-d164-4636-849a-3affaccb18e0
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+  enforced:
+    module:
+      - recipes
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: c8Pby049xIpb1yIYH5fExFQzC0ZlIl1wW2CXi6ARx6o
+name: Ingredient
+type: recipes_ingredient
+description: null
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

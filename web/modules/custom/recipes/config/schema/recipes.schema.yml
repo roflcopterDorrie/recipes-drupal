@@ -1,0 +1,8 @@
+# Schema for the configuration files of the Recipes module.
+recipes.settings:
+  type: config_object
+  label: 'Recipes settings'
+  mapping:
+    example:
+      type: string
+      label: 'Example'

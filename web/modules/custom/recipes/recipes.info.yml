@@ -1,0 +1,14 @@
+name: Recipes
+description: Create and cook recipes.
+package: Custom
+
+type: module
+core_version_requirement: ^11
+
+dependencies:
+  - drupal:link
+  - drupal:views
+  - ai:ai
+  - inline_entity_form:inline_entity_form
+
+php: 8.2

@@ -1,0 +1,14 @@
+uuid: f7ccbb65-3dd6-47c2-b535-72a9e50b16dd
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - recipes
+_core:
+  default_config_hash: fRNBNiC_hWrQhKJS6lh6V9a8ZRWb0MrC5tVTpCPByOo
+name: 'Ingredient aisle'
+vid: recipes_ingredient_aisle
+description: null
+weight: 0
+new_revision: false

@@ -1,0 +1,4 @@
+services:
+  recipes.recipe_data_validator:
+    class: Drupal\recipes\Validation\RecipeDataValidator
+    arguments: ['@config.factory']

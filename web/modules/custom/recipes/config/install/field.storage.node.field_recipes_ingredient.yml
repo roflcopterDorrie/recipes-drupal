@@ -1,0 +1,25 @@
+uuid: 5f490720-cca9-45b1-ac69-072ff6a55ed3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+  enforced:
+    module:
+      - recipes
+_core:
+  default_config_hash: In-4DNvNd3UZhSGi39AddvPBaJ_cBc_TfkVOw_64lJ8
+id: node.field_recipes_ingredient
+field_name: field_recipes_ingredient
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,34 @@
+uuid: db7d0bf5-4fd0-4181-878d-90bc7b5d8f5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_recipes_tags
+    - node.type.recipes_recipe
+    - taxonomy.vocabulary.tags
+  enforced:
+    module:
+      - recipes
+_core:
+  default_config_hash: 48-KtW1zTGqOLR3v2LYgDJqelorlSssb0AF-g_EvuOs
+id: node.recipes_recipe.field_recipes_tags
+field_name: field_recipes_tags
+entity_type: node
+bundle: recipes_recipe
+label: Tags
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,6 +1,8 @@
 _core:
   default_config_hash: 4GIX5Esnc_umpXUBj4IIocRX7Mt5fPhm4AgXfE3E56E
 module:
+  ai: 0
+  ai_provider_docker: 0
   announcements_feed: 0
   automated_cron: 0
   big_pipe: 0
@@ -23,6 +25,8 @@ module:
   help: 0
   history: 0
   image: 0
+  inline_entity_form: 0
+  key: 0
   link: 0
   media: 0
   media_library: 0
@@ -34,6 +38,7 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  recipes: 0
   responsive_image: 0
   search: 0
   shortcut: 0

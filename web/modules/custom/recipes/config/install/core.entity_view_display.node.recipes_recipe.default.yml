@@ -7,8 +7,10 @@ dependencies:
     - field.field.node.recipes_recipe.field_recipes_ingredients
     - field.field.node.recipes_recipe.field_recipes_steps
     - field.field.node.recipes_recipe.field_recipes_tags
+    - image.style.recipes_thumbnail
     - node.type.recipes_recipe
   module:
+    - media
     - text
     - user
   enforced:
@@ -22,11 +24,13 @@ bundle: recipes_recipe
 mode: default
 content:
   field_recipes_image:
-    type: entity_reference_entity_view
+    type: media_thumbnail
     label: hidden
     settings:
-      view_mode: default
-      link: false
+      image_link: ''
+      image_style: recipes_thumbnail
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 1
     region: content

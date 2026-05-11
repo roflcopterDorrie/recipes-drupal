@@ -1,0 +1,19 @@
+uuid: c0cfda82-604d-49a3-a7ee-b9698fe52d86
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_recipes_ingredient_extra
+    - node.type.recipes_ingredient
+id: node.recipes_ingredient.field_recipes_ingredient_extra
+field_name: field_recipes_ingredient_extra
+entity_type: node
+bundle: recipes_ingredient
+label: 'Extra information'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

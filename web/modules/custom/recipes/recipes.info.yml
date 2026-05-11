@@ -10,5 +10,6 @@ dependencies:
   - drupal:views
   - ai:ai
   - inline_entity_form:inline_entity_form
+  - drupal:focal_point
 
 php: 8.2

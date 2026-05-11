@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.recipes_ingredient.field_recipes_ingredient
     - field.field.node.recipes_ingredient.field_recipes_ingredient_aisle
     - field.field.node.recipes_ingredient.field_recipes_ingredient_amount
+    - field.field.node.recipes_ingredient.field_recipes_ingredient_extra
     - node.type.recipes_ingredient
   module:
     - user
@@ -25,7 +26,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 103
+    weight: 2
     region: content
   field_recipes_ingredient_aisle:
     type: entity_reference_label
@@ -33,7 +34,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 102
+    weight: 1
     region: content
   field_recipes_ingredient_amount:
     type: string
@@ -41,11 +42,15 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 101
+    weight: 0
     region: content
-  links:
-    settings: {  }
+  field_recipes_ingredient_extra:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    weight: 100
+    weight: 3
     region: content
-hidden: {  }
+hidden:
+  links: true

@@ -1,0 +1,13 @@
+uuid: 6ffe4ba3-a087-4b73-a06a-0b83ed252b8d
+langcode: en
+status: true
+dependencies: {  }
+id: recipes_image
+label: 'Recipe image'
+description: ''
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image
+field_map: {  }

@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_recipes_image
-    - media.type.image
+    - media.type.recipes_image
     - node.type.recipes_recipe
   enforced:
     module:
@@ -25,7 +25,7 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      image: image
+      recipes_image: recipes_image
     sort:
       field: _none
       direction: ASC

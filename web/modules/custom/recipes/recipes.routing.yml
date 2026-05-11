@@ -6,7 +6,7 @@ recipes.quick_create:
   requirements:
     _permission: 'access content'
 recipes.settings:
-  path: '/admin/config/system/settings'
+  path: '/admin/config/services/recipes'
   defaults:
     _title: 'Settings'
     _form: 'Drupal\recipes\Form\SettingsForm'

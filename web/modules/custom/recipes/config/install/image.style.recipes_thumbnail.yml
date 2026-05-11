@@ -1,0 +1,17 @@
+uuid: 8425f194-761d-4f16-a770-cbda037b3f67
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: recipes_thumbnail
+label: 'Recipes thumbnail'
+effects:
+  cee1509c-3adc-4c9b-8fcd-de940c242a74:
+    uuid: cee1509c-3adc-4c9b-8fcd-de940c242a74
+    id: focal_point_scale_and_crop
+    weight: 2
+    data:
+      width: 800
+      height: 450
+      crop_type: focal_point

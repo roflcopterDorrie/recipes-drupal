@@ -1,0 +1,64 @@
+uuid: 1195efe0-77df-4cfe-862c-2d4240f2d80b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.recipes_image.field_media_image
+    - image.style.max_650x650
+    - media.type.recipes_image
+  module:
+    - focal_point
+    - path
+id: media.recipes_image.default
+targetEntityType: media
+bundle: recipes_image
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_media_image:
+    type: image_focal_point
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: max_650x650
+      preview_link: true
+      offsets: '50,50'
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

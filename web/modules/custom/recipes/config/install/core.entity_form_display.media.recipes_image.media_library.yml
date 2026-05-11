@@ -1,0 +1,32 @@
+uuid: 2fd02e6d-1f68-4a68-b0db-10e6bfc962eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.recipes_image.field_media_image
+    - image.style.max_650x650
+    - media.type.recipes_image
+  module:
+    - focal_point
+id: media.recipes_image.media_library
+targetEntityType: media
+bundle: recipes_image
+mode: media_library
+content:
+  field_media_image:
+    type: image_focal_point
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: max_650x650
+      preview_link: true
+      offsets: '50,50'
+    third_party_settings: {  }
+hidden:
+  created: true
+  name: true
+  path: true
+  status: true
+  uid: true

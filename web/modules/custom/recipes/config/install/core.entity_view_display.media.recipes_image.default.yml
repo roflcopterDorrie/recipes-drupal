@@ -1,0 +1,31 @@
+uuid: 59807de8-cefc-45e0-a1a1-93c64744982a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.recipes_image.field_media_image
+    - image.style.large
+    - media.type.recipes_image
+  module:
+    - image
+id: media.recipes_image.default
+targetEntityType: media
+bundle: recipes_image
+mode: default
+content:
+  field_media_image:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: large
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

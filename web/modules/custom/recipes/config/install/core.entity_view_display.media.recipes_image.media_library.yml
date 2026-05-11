@@ -1,0 +1,32 @@
+uuid: c3e7be22-11c1-46af-90bb-ba1d57b249da
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.recipes_image.field_media_image
+    - image.style.recipes_thumbnail
+    - media.type.recipes_image
+  module:
+    - image
+id: media.recipes_image.media_library
+targetEntityType: media
+bundle: recipes_image
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: recipes_thumbnail
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_media_image: true
+  name: true
+  uid: true

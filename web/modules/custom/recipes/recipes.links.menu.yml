@@ -1,5 +1,0 @@
-recipes.settings:
-  title: Recipes
-  parent: system.admin_config_services
-  route_name: recipes.settings
-  weight: 10

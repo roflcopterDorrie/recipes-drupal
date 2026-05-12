@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ca12f05f3f6a5ef3ef2860b04a567072",
+    "content-hash": "ac925dc25953f7c4c2daaa9f1616f84e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -806,26 +806,6 @@
                 "source": "https://github.com/consolidation/site-process/tree/5.4.2"
             },
             "time": "2024-12-13T19:25:56+00:00"
-        },
-        {
-            "name": "custom/recipes",
-            "version": "dev-dev",
-            "dist": {
-                "type": "path",
-                "url": "web/modules/custom/recipes",
-                "reference": "fc24d84a777030473b17e14aedc84a973e7a4d91"
-            },
-            "require": {
-                "doctrine/inflector": "^2.0",
-                "opis/json-schema": "^2.0",
-                "php-units-of-measure/php-units-of-measure": "^2.1"
-            },
-            "type": "drupal-module",
-            "description": "Recipes module",
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
         },
         {
             "name": "dflydev/dot-access-data",
@@ -4643,6 +4623,35 @@
             "time": "2025-08-27T21:33:23+00:00"
         },
         {
+            "name": "roflcopterdorrie/recipe-manager",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/roflcopterDorrie/recipe-manager.git",
+                "reference": "328c6e3ae714bd22d7b0ff5d318a10d19115a0c1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/roflcopterDorrie/recipe-manager/zipball/328c6e3ae714bd22d7b0ff5d318a10d19115a0c1",
+                "reference": "328c6e3ae714bd22d7b0ff5d318a10d19115a0c1",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/inflector": "^2.0",
+                "opis/json-schema": "^2.0",
+                "php-units-of-measure/php-units-of-measure": "^2.1"
+            },
+            "default-branch": true,
+            "type": "drupal-custom-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "A recipe module for Drupal that allows users to quickly create and manage recipes.",
+            "support": {
+                "issues": "https://github.com/roflcopterDorrie/recipe-manager/issues",
+                "source": "https://github.com/roflcopterDorrie/recipe-manager/tree/main"
+            },
+            "time": "2026-05-11T06:50:26+00:00"
+        },
+        {
             "name": "sebastian/diff",
             "version": "7.0.0",
             "source": {
@@ -7624,9 +7633,9 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "custom/recipes": 20,
         "drupal/ai_provider_docker": 20,
-        "drupal/inline_entity_form": 5
+        "drupal/inline_entity_form": 5,
+        "roflcopterdorrie/recipe-manager": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

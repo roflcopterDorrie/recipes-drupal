@@ -1,5 +1,0 @@
-_core:
-  default_config_hash: pwwafZz6U2Uap8hAuBRcUyyo_oGRNFnnp7W-KW2plGM
-example: "Extract all recipe information from the following URL: @website_text\r\n\r\nVisit the page and return only a JSON string, nothing else.\r\n\r\nUse this schema: @schema\r\n\r\nIngredient aisle taxonomy:\r\n@ingredientAisleTaxonomy\r\n\r\nRules:\r\n- Do not paraphrase or invent ingredients or steps.\r\n- Do not include commentary, explanation, or formatting outside the JSON.\r\n- The output must be valid JSON that PHP’s json_decode() can parse.\r\n\r\nReturn only the JSON string.\r\n"
-prompt: "Extract all recipe information from the following text: @website_text\r\nUse this json schema to format the data: @schema\r\nUse this taxonomy for categories: @ingredient_aisle_taxonomy\r\nOnly put the food ingredient in the ingredient field and make sure to put any additional information in the extra field.\r\n  Rules:\r\n  - Do not paraphrase or invent ingredients or steps.\r\n  - Do not include commentary, explanation, or formatting outside the JSON.\r\n  - The output must be valid JSON that PHP’s json_decode() can parse.\r\n  \r\n  Return only the JSON string."
-selected_model: ''

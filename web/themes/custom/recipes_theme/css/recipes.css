@@ -1,0 +1,38 @@
+.ingredient {
+  color: black;
+  display: inline-block;
+
+  .ingredient__name {
+    font-weight: 700;
+  }
+
+  .ingredient__extra {
+    color: #565656;
+  }
+
+
+
+}
+
+.steps {
+  li {
+    margin-bottom: 10px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .ingredient {
+    border: 1px solid #a1a1a1;
+    border-radius: 15px;
+    background: #eaeaea;
+    padding: 0px 6px;
+    margin: 1px 0px;
+  }
+
+  .ingredient__amount:not(:empty):has(~ .ingredient__name:not(:empty)),
+  .ingredient__name:not(:empty):has(~ .ingredient__extra:not(:empty)) {
+    margin-right: 0.25em;
+  }
+}

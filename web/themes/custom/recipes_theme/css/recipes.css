@@ -1,3 +1,37 @@
+body {
+  font-family: 'Akt', serif;
+  font-size: 1.25em;
+  margin: 0;
+}
+
+.layout-container
+{
+  box-sizing: border-box; 
+  width: 100%;
+  max-width: 920px;
+  background-color: #fff5ea;
+  border: 1px solid #c9c9c9;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  padding: 0.5em;
+  margin: 0;
+
+  /* Nested Tablet Breakpoint */
+  @media (min-width: 768px) {
+    padding: 2em;
+    margin: 2em;
+  }
+}
+
+.ingredients {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+
+  padding-left: 1em;
+}
+
 .ingredient {
   color: black;
   display: inline-block;
@@ -9,17 +43,23 @@
   .ingredient__extra {
     color: #565656;
   }
-
-
-
 }
 
 .steps {
+  list-style-position: inside; 
+  padding-left: 0;
+
+  @media (min-width: 768px) {
+    list-style-type: decimal; 
+    padding-left: 1em;
+  }
+
   li {
-    margin-bottom: 10px;
+    margin-bottom: 1.5em;
 
     p {
       margin: 0;
+      display: inline;
     }
   }
 

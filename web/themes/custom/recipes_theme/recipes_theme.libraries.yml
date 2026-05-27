@@ -9,5 +9,6 @@ fonts:
   css:
     theme:
       https://fonts.googleapis.com: { type: external, preprocess: false }
-      https://fonts.gstatic.com: { type: external, preprocess: false, attributes: { crossorigin: true } }
-      'https://fonts.googleapis.com/css2?family=Akt:wght@100..900&family=Lora:wght@400..700&display=swap': { type: external, minified: true }
+      https://fonts.gstatic.com: { type: external, preprocess: false }
+      'https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap': { type: external, minified: true }
+      'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined': { type: external, preprocess: false }

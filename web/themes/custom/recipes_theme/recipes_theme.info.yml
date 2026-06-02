@@ -1,0 +1,14 @@
+name: Recipes theme
+type: theme
+description: 'A companion theme to go with the Recipes module.'
+core_version_requirement: ^10 | ^11
+core: ^10 | ^11
+libraries:
+  - recipes_theme/base
+  - recipes_theme/fonts
+base theme: false
+regions:
+  header: Header
+  primary_menu: Primary menu
+  content: Content
+  sidebar: Sidebar

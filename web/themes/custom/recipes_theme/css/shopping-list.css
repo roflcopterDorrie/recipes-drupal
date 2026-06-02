@@ -1,0 +1,85 @@
+
+.recipes-shopping-list {
+  margin: 0.5rem;
+  background-color: #fff;
+  background-image:
+    linear-gradient(rgba(0, 150, 255, 0.2) 1px, transparent 1px);
+  background-size: 100% 2rem, 100% 100%;
+  line-height: 2rem;
+  padding: 2rem 1rem 1rem 1rem;
+  box-shadow: 0 0px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  border-top: 2px solid rgba(0, 150, 255, 0.2);
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  label {
+    font-size: 1.2rem;
+
+    position: relative;
+    display: block;
+
+    .item-text {
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+      
+      background-size: 0% 2px; 
+      background-position-y: 50%;
+      background-repeat: no-repeat;
+      
+      background-image: linear-gradient(#afafaf, #afafaf);
+      transition: background-size 0.25s ease-out;
+    }
+
+    .marker {
+      color: #888;
+    }
+
+    .ingredient {
+      font-weight: bold;
+    }
+
+    .amount {
+      display: inline-block;
+    }
+
+    .extra {
+      font-style: italic;
+      color: grey;
+    }
+  }
+
+  input[type="checkbox"]:checked+label {
+    color: #afafaf;
+
+    .item-text {
+      background-size: 100% 2px; 
+      background-position-y: 50%;
+    }
+
+    .ingredient, .extra, .marker {
+      color: #afafaf;
+      font-weight: normal;
+    }
+  }
+
+
+  fieldset {
+    border: none;
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+  /* Modern browsers (Chrome, Firefox, Edge) */
+  fieldset legend {
+    list-style: none;
+    /* Removes the default arrow icon */
+    font-family: 'Caveat';
+    box-sizing: border-box;
+    border-bottom: 2px solid red;
+    font-size: 1.25em;
+    height: 2rem;
+  }
+
+}

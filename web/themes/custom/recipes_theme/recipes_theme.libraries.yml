@@ -2,6 +2,7 @@ base:
   css:
     theme:
       css/recipes.css: {}
+
 fonts:
   license:
     name: SIL Open Font License, 1.1
@@ -12,3 +13,9 @@ fonts:
       https://fonts.gstatic.com: { type: external, preprocess: false }
       'https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap': { type: external, minified: true }
       'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined': { type: external, preprocess: false }
+      'https://fonts.googleapis.com/css2?family=Akt:wght@100..900&family=Caveat:wght@400..700&family=Lora:wght@400..700&display=swap': { type: external, preprocess: false }
+
+shopping_list:
+  css:
+    theme:
+      css/shopping-list.css: {}

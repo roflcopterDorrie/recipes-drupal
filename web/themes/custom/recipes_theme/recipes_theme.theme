@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * Implements hook_preprocess_form.
+ */
+function recipes_theme_preprocess_form(array &$variables) {
+  $element = $variables['element'];
+
+  if (isset($element['#form_id']) && $element['#form_id'] === 'recipes_shopping_list_form') {
+    $variables['#attached']['library'][] = 'recipes_theme/shopping_list';
+  }
+}

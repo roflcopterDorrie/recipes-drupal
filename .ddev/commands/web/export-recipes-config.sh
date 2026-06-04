@@ -24,6 +24,8 @@ for file in config/sync/*.yml; do
   fi
 done
 
+cp config/sync/recipes.settings.yml "$DEST"
+
 echo "✅ Copied config files"
 
 # Remove uuid lines.

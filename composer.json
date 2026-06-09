@@ -26,12 +26,11 @@
         "drupal/gin": "^5.0",
         "drupal/tagify": "^1.2",
         "drush/drush": "^13.7",
-        "roflcopterdorrie/recipes": "dev-dev"
+        "roflcopterdorrie/recipes": "0.1.0"
     },
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
         "allow-plugins": {

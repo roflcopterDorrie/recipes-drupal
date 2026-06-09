@@ -900,3 +900,16 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 # if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
+
+// Check if the Redis extension is loaded and we are not running via command line installer
+if (extension_loaded('redis')) {
+  $settings['container_yamls'][] = 'modules/contrib/redis/redis.services.yml';
+  
+  // Set Redis as the default backend for all caches
+  $settings['cache']['default'] = 'cache.backend.redis';
+  
+  // Tell Drupal where the Redis container lives (using its Docker service name)
+  $settings['redis.connection']['host'] = 'redis';
+  $settings['redis.connection']['port'] = 6379;
+  $settings['redis.connection']['interface'] = 'PhpRedis';
+}

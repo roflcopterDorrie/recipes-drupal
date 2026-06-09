@@ -38,3 +38,10 @@ RUN mkdir -p /opt/drupal/web/sites/default/files
 # Finalize permissions.
 RUN chown -R www-data:www-data /opt/drupal/web/sites/default/files && \
     chown -R www-data:www-data /opt/drupal/web/themes/custom
+
+
+# Redis and APCu
+RUN apk add --no-cache --virtual .build-deps $PHPIZE_DEPS && \
+    pecl install apcu redis && \
+    docker-php-ext-enable apcu redis && \
+    apk del .build-deps

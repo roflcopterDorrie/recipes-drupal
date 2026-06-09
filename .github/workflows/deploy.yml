@@ -37,7 +37,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          file: ./Dockerfile
+          file: ./drupal.Dockerfile
           push: true
           tags: |
             ${{ env.DRUPAL_IMAGE }}:latest

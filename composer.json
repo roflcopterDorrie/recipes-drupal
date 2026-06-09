@@ -20,6 +20,7 @@
         "drupal/focal_point": "^2.1",
         "drupal/gemini_provider": "^1.0",
         "drupal/gin": "^5.0",
+        "drupal/redis": "^1.11",
         "drupal/tagify": "^1.2",
         "drush/drush": "^13.7",
         "roflcopterdorrie/recipes": "^0.1.0"

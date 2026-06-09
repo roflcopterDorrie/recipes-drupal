@@ -1,13 +1,12 @@
-name: Build and Push Drupal Image
+name: Build and Push Images
 
 on:
- push:
+  push:
     branches: [ "master" ]
 
 env:
   REGISTRY: ghcr.io
-  REPO: ${{ github.repository }}
-  REPO_LC: "repo_lower"
+
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -16,27 +15,41 @@ jobs:
       packages: write
 
     steps:
-      - name: Set lower case owner name
-        run: |
-          echo "REPO_LC=${REPO,,}" >>${GITHUB_ENV}
-        env:
-          REPO: '${{ github.repository }}'
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
+
+      # Generates lowercase names to completely avoid GitHub repository capitalization bugs
+      - name: Set lower case owner and image names
+        run: |
+          REPO_LOWER=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+          echo "DRUPAL_IMAGE=${{ env.REGISTRY }}/$REPO_LOWER-drupal" >> $GITHUB_ENV
+          echo "NGINX_IMAGE=${{ env.REGISTRY }}/$REPO_LOWER-nginx" >> $GITHUB_ENV
 
       - name: Log in to the Container registry
-        uses: docker/login-action@v4
+        uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v7
+      # --- 1. BUILD DRUPAL IMAGE ---
+      - name: Build and push Drupal image
+        uses: docker/build-push-action@v6
         with:
           context: .
+          file: ./Dockerfile
           push: true
-          # This tags the image as 'latest' and with the specific Git commit hash
           tags: |
-            ${{ env.REGISTRY }}/${{ env.REPO_LC }}:latest
-            ${{ env.REGISTRY }}/${{ env.REPO_LC }}:${{ github.sha }}
+            ${{ env.DRUPAL_IMAGE }}:latest
+            ${{ env.DRUPAL_IMAGE }}:${{ github.sha }}
+
+      # --- 2. BUILD NGINX IMAGE ---
+      - name: Build and push Nginx Image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./nginx.Dockerfile
+          push: true
+          tags: |
+            ${{ env.NGINX_IMAGE }}:latest
+            ${{ env.NGINX_IMAGE }}:${{ github.sha }}

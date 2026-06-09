@@ -5,32 +5,39 @@ COPY composer.json composer.lock ./
 RUN composer install --no-dev --optimize-autoloader --no-interaction --ignore-platform-reqs
 # Ensure index.php and .htaccess are actually created
 RUN composer drupal:scaffold
+RUN echo "--- DEBUG: STAGE 1 CONTRIB MODULES ---" && ls -la web/modules/contrib/
 
 # STAGE 2: Production (The "Plate")
 FROM drupal:11-fpm-alpine
 WORKDIR /opt/drupal
 
+# Make sure our composer files are in the final build.
 COPY --from=builder /opt/drupal/composer.json /opt/drupal/composer.json
 COPY --from=builder /opt/drupal/composer.lock /opt/drupal/composer.lock
 
+# Copy across all the files that composer has just downloaded.
+
 COPY --from=builder /opt/drupal/vendor /opt/drupal/vendor  
 COPY --from=builder /opt/drupal/web/modules/contrib /opt/drupal/web/modules/contrib
+RUN echo "--- DEBUG: STAGE 2 CONTRIB MODULES ---" && ls -la /opt/drupal/web/modules/contrib
 COPY --from=builder /opt/drupal/web/themes/contrib /opt/drupal/web/themes/contrib
 
-COPY web/sites/default/settings.prod.php /opt/drupal/web/sites/default/settings.php
-#COPY config /opt/drupal/config
+# Copy the recipes-theme theme. Remove this once it gets its own repo.
+COPY web/themes/custom /opt/drupal/web/themes/custom
 
-COPY --from=builder /opt/drupal/web/index.php /opt/drupal/web/index.php
-COPY --from=builder /opt/drupal/web/.htaccess /opt/drupal/web/.htaccess
+# Use a prod settings file.
+COPY web/sites/default/settings.prod.php /opt/drupal/web/sites/default/settings.php
+
+#COPY --from=builder /opt/drupal/web/index.php /opt/drupal/web/index.php
+#COPY --from=builder /opt/drupal/web/.htaccess /opt/drupal/web/.htaccess
 
 # Ensure everything in the web root is readable
 RUN chmod -R 755 /opt/drupal/web && \
     chmod -R 755 /opt/drupal/vendor
 
-# Finalize permissions - added the 'custom' and 'config' folders here
-RUN mkdir -p /opt/drupal/web/sites/default/files && \
-    chown -R www-data:www-data /opt/drupal/web/sites/default/files && \
-    chown -R www-data:www-data /opt/drupal/web/modules/custom && \
-    chown -R www-data:www-data /opt/drupal/web/themes/custom && \
-    chown -R www-data:www-data /opt/drupal/config && \
-    chown www-data:www-data /opt/drupal/web/sites/default/settings.php
+# Make sure the files folder exists.
+RUN mkdir -p /opt/drupal/web/sites/default/files
+
+# Finalize permissions.
+RUN chown -R www-data:www-data /opt/drupal/web/sites/default/files && \
+    chown -R www-data:www-data /opt/drupal/web/themes/custom

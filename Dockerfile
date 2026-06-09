@@ -10,14 +10,15 @@ RUN composer drupal:scaffold
 FROM drupal:11-fpm-alpine
 WORKDIR /opt/drupal
 
+COPY --from=builder /opt/drupal/composer.json /opt/drupal/composer.json
+COPY --from=builder /opt/drupal/composer.lock /opt/drupal/composer.lock
+
 COPY --from=builder /opt/drupal/vendor /opt/drupal/vendor  
 COPY --from=builder /opt/drupal/web/modules/contrib /opt/drupal/web/modules/contrib
 COPY --from=builder /opt/drupal/web/themes/contrib /opt/drupal/web/themes/contrib
 
-COPY web/modules/custom /opt/drupal/web/modules/custom
-COPY web/themes/custom /opt/drupal/web/themes/custom
-COPY web/sites/default/settings.php /opt/drupal/web/sites/default/settings.php
-COPY config /opt/drupal/config
+COPY web/sites/default/settings.prod.php /opt/drupal/web/sites/default/settings.php
+#COPY config /opt/drupal/config
 
 COPY --from=builder /opt/drupal/web/index.php /opt/drupal/web/index.php
 COPY --from=builder /opt/drupal/web/.htaccess /opt/drupal/web/.htaccess

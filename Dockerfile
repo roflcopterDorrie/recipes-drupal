@@ -28,9 +28,6 @@ COPY web/themes/custom /opt/drupal/web/themes/custom
 # Use a prod settings file.
 COPY web/sites/default/settings.prod.php /opt/drupal/web/sites/default/settings.php
 
-#COPY --from=builder /opt/drupal/web/index.php /opt/drupal/web/index.php
-#COPY --from=builder /opt/drupal/web/.htaccess /opt/drupal/web/.htaccess
-
 # Ensure everything in the web root is readable
 RUN chmod -R 755 /opt/drupal/web && \
     chmod -R 755 /opt/drupal/vendor

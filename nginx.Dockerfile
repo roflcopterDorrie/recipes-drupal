@@ -1,5 +1,5 @@
 # Grab your freshly built Drupal image that contains all the code
-FROM ghcr.io/roflcopterdorrie/recipes-drupal:latest as drupal_source
+FROM ghcr.io/roflcopterdorrie/recipes-drupal-drupal:latest as drupal_source
 
 # Grab the production Nginx image
 FROM nginx:alpine

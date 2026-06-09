@@ -84,9 +84,7 @@ body {
   margin-bottom: 20px;
   overflow: hidden;
 
-  @media (min-width: 768px) {
-    width: 300px;
-  }
+  flex: 1 1 300px;
 
   img {
     display: block;
@@ -108,13 +106,24 @@ body {
     a {
       color: black;
     }
+
+    .recipe-title {
+      padding-right: 3rem;
+    }
   }
 
   .actions {
     position: absolute;
-    right: 15px;
-    bottom: 5px;
+    right: 5px;
+    bottom: 0px;
   }
+}
+
+.recipes-card-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .recipes-button {

@@ -26,7 +26,7 @@
         "drupal/gin": "^5.0",
         "drupal/tagify": "^1.2",
         "drush/drush": "^13.7",
-        "roflcopterdorrie/recipes": "0.1.0"
+        "roflcopterdorrie/recipes": "^0.1.0"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -79,9 +79,6 @@
             ],
             "web/themes/custom/{$name}": [
                 "type:drupal-custom-theme"
-            ],
-            "recipes/{$name}": [
-                "type:drupal-recipe"
             ]
         },
         "drupal-core-project-message": {

@@ -113,7 +113,18 @@ server {
 ### Create a `.env` file
 
 ```
-SOME VARIABLES IN HERE
+# MARIADB VARIABLES
+MARIADB_ROOT_PASSWORD=[root password here]
+MARIADB_DATABASE=drupal_db
+MARIADB_USER=drupal_user
+MARIADB_PASSWORD=[drupal db password here]
+
+# DRUPAL VARIABLES
+DRUPAL_DB_NAME=drupal_db
+DRUPAL_DB_USER=drupal_user
+DRUPAL_DB_PASSWORD=[drupal db password here]
+DRUPAL_DB_HOST=db
+DRUPAL_HASH_SALT=[random string of characters]
 ```
 
 

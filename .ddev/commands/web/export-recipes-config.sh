@@ -26,6 +26,9 @@ done
 
 cp config/sync/recipes.settings.yml "$DEST"
 
+# Clear out the config folder.
+rm -f config/sync/*.yml
+
 echo "✅ Copied config files"
 
 # Remove uuid lines.

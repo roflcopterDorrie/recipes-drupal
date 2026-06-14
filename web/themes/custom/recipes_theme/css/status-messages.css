@@ -1,0 +1,32 @@
+/* The Main Error Container */
+div[role="alert"] {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  background-color: #fef2f2; /* Soft, non-aggressive red background */
+  border: 1px solid #ef4444; /* Thick crimson accent bar */
+  border-left: 4px solid #ef4444; /* Thick crimson accent bar */
+  border-radius: var(--radius, 8px); /* Rounds only the right corners */
+  color: #991b1b; /* Dark red text for high-contrast readability */
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Optional: Adds a warning icon before the text using pure CSS */
+div[role="alert"]::before {
+  content: "!";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  background-color: #ef4444;
+  color: #ffffff;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 0.8rem;
+}

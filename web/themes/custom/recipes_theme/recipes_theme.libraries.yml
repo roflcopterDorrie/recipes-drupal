@@ -1,7 +1,12 @@
 base:
   css:
     theme:
+      css/status-messages.css: {}
+      css/layout.css: {}
+      css/utility.css: {}
       css/recipes.css: {}
+      css/forms.css: {}
+      css/navigation.css: {}
 
 fonts:
   license:

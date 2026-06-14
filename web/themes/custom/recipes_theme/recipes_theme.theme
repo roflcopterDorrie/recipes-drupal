@@ -6,7 +6,27 @@
 function recipes_theme_preprocess_form(array &$variables) {
   $element = $variables['element'];
 
-  if (isset($element['#form_id']) && $element['#form_id'] === 'recipes_shopping_list_form') {
-    $variables['#attached']['library'][] = 'recipes_theme/shopping_list';
+  if (isset($element['#form_id'])) {
+    switch ($element['#form_id']) {
+      case 'recipes_shopping_list_form':
+      case 'recipes_make_shopping_list_form':
+        $variables['#attached']['library'][] = 'recipes_theme/shopping_list';
+        break;
+    }
   }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for views_view_unformatted.
+ */
+function recipes_theme_theme_suggestions_views_view_unformatted_alter(array &$suggestions, array $variables) {
+  $view = $variables['view'];
+  $id = $view->id();
+  $display_id = $view->current_display;
+
+  // Suggestion 1: views-view-unformatted--[view-id].html.twig
+  $suggestions[] = 'views_view_unformatted__' . $id;
+
+  // Suggestion 2: views-view-unformatted--[view-id]--[display-id].html.twig
+  #$suggestions[] = 'views_view_unformatted__' . $id . '__' . $display_id;
 }

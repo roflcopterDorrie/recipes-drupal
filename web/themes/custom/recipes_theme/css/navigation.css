@@ -1,0 +1,88 @@
+
+/* MENU */
+nav {
+    h2 {
+        display: none;
+    }
+}
+
+.recipes-navigation {
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
+  padding: 0 2rem;
+  margin-left: -2rem;
+  margin-right: -2.5rem;
+  display: flex;
+  align-items: left;       
+  justify-content: flex-start;
+  gap: 1rem;
+  flex-direction: column;
+
+  .controls {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.recipes-logo {
+  display: block;
+  height: auto;
+  width: 20px;  
+  @media (min-width: 768px) {
+    height: 40px; 
+    width: auto;  
+  }
+}
+
+.recipes-navigation-menu {
+  display: none;
+}
+
+.recipes-navigation > ul {
+  flex-direction: column;
+
+  
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0; 
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    height: 70px; 
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+.recipes-navigation > ul li {
+  padding: 0.5rem 0;
+  @media (min-width: 768px) {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.recipes-navigation > ul li a {
+  text-decoration: none;
+  color: #666666;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 8px 0;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  border-bottom: 2px solid transparent; /* Prevents shifting layouts on hover */
+}
+
+/* 5. Interactive States */
+.recipes-navigation > ul li a:hover,
+.recipes-navigation > ul li a:focus {
+  color: #1a1a1a;
+  border-bottom-color: #0066cc; /* Clean accent color underline on hover */
+}
+
+/* Active Drupal Route Highlight (Applies when a user is on that specific page) */
+.recipes-navigation > ul li a.is-active {
+  color: #0066cc;
+  border-bottom-color: #0066cc;
+}

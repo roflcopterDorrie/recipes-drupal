@@ -62,12 +62,12 @@
 
 <article{{ attributes.addClass("recipe-card") }}>
   <a href="{{ url }}">
-    <h2 class="recipe-card__title">{{ label }}</h2>
     {% if not node.field_recipes_image.isEmpty() %}
       {{ content.field_recipes_image }}
     {% else %}
       <img src="/{{ directory }}/images/default_recipe.jpg" />
     {% endif %}
+    <h2 class="recipe-card__title">{{ label }}</h2>
     {{ content|without('field_recipes_image') }} 
   </a>
 </article>

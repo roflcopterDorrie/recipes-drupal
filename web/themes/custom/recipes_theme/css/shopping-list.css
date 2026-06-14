@@ -1,5 +1,5 @@
-.recipes-shopping-list,
-.recipes-shopping-list__opposite {
+#recipes-shopping-list,
+#recipes-make-shopping-list {
   margin: 0 0 1rem 0;
   background-color: #fff;
   background-image:
@@ -41,7 +41,7 @@
   }
 }
 
-.recipes-shopping-list {
+#recipes-shopping-list {
   label {
     .item-text {
       box-decoration-break: clone;
@@ -89,7 +89,7 @@
 
 }
 
-.recipes-shopping-list__opposite {
+#recipes-make-shopping-list {
   label {
     .item-text {
       box-decoration-break: clone;

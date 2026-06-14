@@ -1,10 +1,10 @@
 .recipes_image_preview {
-  max-width: 300px;
+  max-width: 350px;
 }
 
 .recipe {
   img {
-    max-width: 300px;
+    max-width: 350px;
     height: auto;
   }
 }
@@ -67,6 +67,7 @@
   border: 1px solid #b1b1b1;
   box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.15);
   overflow: hidden;
+  border-radius: 10px;
 
   flex: 0 1 350px;
 
@@ -76,20 +77,18 @@
     height: auto;
   }
 
+  a {
+    color: #0a694b;
+    text-decoration: none;
+  }
+
   .recipe-card__title {
-    position: absolute;
-    bottom: 0px;
     font-weight: 300;
     width: 100%;
     font-size: 1em;
     background: rgba(255, 255, 255, 0.75);
-    color: black;
     padding: 5px 45px 5px 15px;
     margin: 0;
-
-    a {
-      color: black;
-    }
 
     .recipe-title {
       padding-right: 3rem;

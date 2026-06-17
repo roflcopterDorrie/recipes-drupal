@@ -24,3 +24,13 @@ shopping_list:
   css:
     theme:
       css/shopping-list.css: {}
+
+ingredient_search:
+  js:
+    js/ingredient_search.js: { attributes: { type: module } }
+  css:
+    theme:
+      css/ingredient-search.css: {}
+  dependencies:
+    - core/drupal
+    - core/once

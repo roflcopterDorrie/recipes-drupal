@@ -26,8 +26,6 @@ shopping_list:
       css/shopping-list.css: {}
 
 ingredient_search:
-  js:
-    js/ingredient_search.js: { attributes: { type: module } }
   css:
     theme:
       css/ingredient-search.css: {}

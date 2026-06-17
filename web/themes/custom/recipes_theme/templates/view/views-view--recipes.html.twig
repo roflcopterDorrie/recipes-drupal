@@ -35,19 +35,9 @@
 {%
   set classes = [
     dom_id ? 'js-view-dom-id-' ~ dom_id,
+    'view-recipes-browse'
   ]
 %}
-<div>
-  <label for="recipes-ingredient-search">Ingredients</label>
-  <input type="text" name="ingredient-search" id="recipes-ingredient-search"/>
-
-  <template id="recipes-ingredient-template">
-    <div class="recipes-search-result__ingredient"></div>
-  </template>
-
-  <div id="recipes-ingredient-search-results"></div>
-</div>
-
 
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}

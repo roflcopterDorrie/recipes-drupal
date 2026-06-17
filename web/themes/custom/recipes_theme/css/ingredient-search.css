@@ -1,13 +1,22 @@
-.views-exposed-form {
-  /*display: none;*/
+.view-recipes-browse .views-exposed-form {
+  display: none;
 }
 
-#recipes-ingredient-search-results {
-  display: flex;
+#recipes-ingredient-search-wrapper label {
+  display: none;
+}
+
+.recipe-ingredient-search-results {
+  display: inline-flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin: 0.5rem 0;
+  align-items: center;
+}
+
+#recipes-ingredient-search--found-ingredients {
+  display: inline-block;
 }
 .recipes-search-result__ingredient {
   background-color: #e88659;
@@ -17,4 +26,12 @@
   font-weight: bold;
   display: inline-block;
   padding: 5px 10px;
+}
+
+.recipe-ingredient-search-results__label,
+.recipe-ingredient-search-results__none {
+  font-size: 0.8rem;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 0;
 }

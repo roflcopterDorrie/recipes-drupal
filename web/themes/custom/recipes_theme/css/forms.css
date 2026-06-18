@@ -1,0 +1,110 @@
+/* 1. Setup global form variables for easy customization */
+:root {
+  --primary-color: #0a694b;      /* Royal blue focus color */
+  --text-color: #1f2937;         /* Off-black for readability */
+  --bg-color: #ffffff;
+  --border-color: #d1d5db;       /* Subtle gray border */
+  --border-hover: #9ca3af;       
+  --error-color: #ef4444;
+  --radius: 8px;                 /* Smooth rounded corners */
+  --transition: all 0.2s ease-in-out;
+}
+
+/* 3. Style the Label */
+label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* 4. The Main Input Styling */
+input[type="text"],
+input[type="url"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 1rem;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  outline: none; /* Removes the ugly default browser ring */
+  transition: var(--transition);
+  box-sizing: border-box;
+}
+
+/* 5. Hover State */
+input:hover,
+textarea:hover {
+  border-color: var(--border-hover);
+}
+
+/* 6. Focus State (The Glow Up) */
+input:focus,
+textarea:focus {
+  border-color: var(--primary-color);
+  /* Creates a subtle, elegant focus ring */
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15); 
+}
+
+/* 7. Placeholder Text */
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af;
+}
+
+/* 8. Bonus: Disabled State */
+input:disabled {
+  background-color: #f3f4f6;
+  border-color: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* 1. Base Button Styles (Shared by all buttons) */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius, 8px); /* Matches input corners */
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+  background-color: var(--primary-color, #4f46e5);
+  color: #ffffff;
+}
+
+.button:hover {
+  background-color: #4338ca; /* Slightly darker shade for hover */
+  transform: translateY(-1px);  /* Subtle lift effect */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.button:active {
+  background-color: #3730a3; /* Even darker when clicked */
+  transform: translateY(0);    /* Sinks back down */
+}
+
+/* 4. Focus State for Accessibility (Keyboard Navigation) */
+.button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.4);
+}
+
+/* 5. Disabled State */
+.button:disabled {
+  background-color: #e5e7eb;
+  border-color: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}

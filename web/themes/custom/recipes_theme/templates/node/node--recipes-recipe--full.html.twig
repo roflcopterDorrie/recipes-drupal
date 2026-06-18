@@ -62,9 +62,13 @@
 <article{{ attributes.addClass("recipe") }}>
 
   {{ title_prefix }}
-  {% if label and view_mode != "full" %}
+  {% if label %}
     <h2{{ title_attributes }}>
+      {% if view_mode != "full" %}
       <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      {% else %}
+      {{ label }}
+      {% endif %}
     </h2>
   {% endif %}
   {{ title_suffix }}

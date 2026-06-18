@@ -1,7 +1,12 @@
 base:
   css:
     theme:
+      css/status-messages.css: {}
+      css/layout.css: {}
+      css/utility.css: {}
       css/recipes.css: {}
+      css/forms.css: {}
+      css/navigation.css: {}
 
 fonts:
   license:
@@ -19,3 +24,11 @@ shopping_list:
   css:
     theme:
       css/shopping-list.css: {}
+
+ingredient_search:
+  css:
+    theme:
+      css/ingredient-search.css: {}
+  dependencies:
+    - core/drupal
+    - core/once

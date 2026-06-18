@@ -1,6 +1,6 @@
-
-.recipes-shopping-list {
-  margin: 0.5rem;
+#recipes-shopping-list,
+#recipes-make-shopping-list {
+  margin: 0 0 1rem 0;
   background-color: #fff;
   background-image:
     linear-gradient(rgba(0, 150, 255, 0.2) 1px, transparent 1px);
@@ -16,11 +16,33 @@
   }
 
   label {
+    :hover {
+      cursor: pointer;
+    }
     font-size: 1.2rem;
-
     position: relative;
     display: block;
+  }
 
+  fieldset {
+    border: none;
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+
+  fieldset legend {
+    list-style: none;
+    /* Removes the default arrow icon */
+    font-family: 'Caveat';
+    box-sizing: border-box;
+    border-bottom: 2px solid red;
+    font-size: 1.25em;
+    height: 2rem;
+  }
+}
+
+#recipes-shopping-list {
+  label {
     .item-text {
       box-decoration-break: clone;
       -webkit-box-decoration-break: clone;
@@ -65,21 +87,58 @@
     }
   }
 
+}
 
-  fieldset {
-    border: none;
-    padding: 0;
-    margin-bottom: 2rem;
-  }
-  /* Modern browsers (Chrome, Firefox, Edge) */
-  fieldset legend {
-    list-style: none;
-    /* Removes the default arrow icon */
-    font-family: 'Caveat';
-    box-sizing: border-box;
-    border-bottom: 2px solid red;
-    font-size: 1.25em;
-    height: 2rem;
+#recipes-make-shopping-list {
+  label {
+    .item-text {
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+      
+      background-size: 0% 2px; 
+      background-position-y: 50%;
+      background-repeat: no-repeat;
+      
+      background-image: linear-gradient(#afafaf, #afafaf);
+      transition: background-size 0.25s ease-in;
+    }
+
+    color: #afafaf;
+
+    .item-text {
+      background-size: 100% 2px; 
+      background-position-y: 50%;
+    }
+
+    .ingredient, .extra, .marker {
+      color: #afafaf;
+      font-weight: normal;
+    }
   }
 
+  input[type="checkbox"]:checked+label {
+    color: black;
+    
+    .item-text {
+      background: none;
+    }
+
+    .marker {
+      color: #888;
+    }
+
+    .ingredient {
+      color: black;
+      font-weight: bold;
+    }
+
+    .amount {
+      display: inline-block;
+    }
+
+    .extra {
+      font-style: italic;
+      color: grey;
+    }
+  }
 }

@@ -32,3 +32,7 @@ ingredient_search:
   dependencies:
     - core/drupal
     - core/once
+
+navigation:
+  js:
+    js/navigation.js: { attributes: { type: module } }

@@ -22,13 +22,7 @@
 #}
 {% import _self as menus %}
 
-<div class="recipes-navigation">
-  <div class="controls">
-    <img class="recipes-logo" src="/{{ directory }}/images/recipes-logo.png" />
-    <span class="material-symbols-outlined burger">menu</span>
-  </div>
-
-
+<div class="recipes-nav-items">
   {#
     We call a macro which calls itself to render the full tree.
     https://twig.symfony.com/doc/3.x/tags/macro.html

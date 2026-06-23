@@ -4,9 +4,12 @@
   Drupal.behaviors.recipesNavigation = {
     attach: function (context) {
 
-      once('recipesNavigation', context).forEach(async function () {
+      const recipesMobileNavToggle = once('allErecipesMobileNavToggleditFrequencies', '.recipes-menu-toggle', context);
+
+      recipesMobileNavToggle.forEach(async function () {
 
         const button = document.querySelector('.recipes-menu-toggle');
+        console.log(button);
         const items = document.querySelector('.recipes-nav');
         if (!button)
           return;

@@ -37,9 +37,11 @@
  * @see \Drupal\Core\Field\FieldPreprocess::preprocessField()
  */
 #}
-<h3>{{ label }}</h3>
+<details class="details-ingredients">
+<summary>{{ label }}</summary>
 <ul class="ingredients">
   {% for item in items %}
     <li>{{ item.content }}</li>
   {% endfor %}
 </ul>
+</details>

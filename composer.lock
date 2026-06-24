@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3f628518c8ba774381d53861d8ffbbc2",
+    "content-hash": "7fdd8dfa43eb5cf36ad573221ede9f99",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1189,6 +1189,61 @@
             "homepage": "https://www.drupal.org/project/ai",
             "support": {
                 "source": "https://git.drupalcode.org/project/ai"
+            }
+        },
+        {
+            "name": "drupal/anonymous_login",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/anonymous_login.git",
+                "reference": "8.x-2.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/anonymous_login-8.x-2.2.zip",
+                "reference": "8.x-2.2",
+                "shasum": "b9fb2942ac46f1ff6e80daad0f6f4a30ae8f0cef"
+            },
+            "require": {
+                "drupal/core": "^9.5 || ^10 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.2",
+                    "datestamp": "1734641906",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "branch-alias": {
+                    "dev-8.x-2.x": "2.x-dev"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "andrew_tspkh",
+                    "homepage": "https://www.drupal.org/user/3302731"
+                },
+                {
+                    "name": "japerry",
+                    "homepage": "https://www.drupal.org/user/45640"
+                },
+                {
+                    "name": "mstef",
+                    "homepage": "https://www.drupal.org/user/107190"
+                }
+            ],
+            "description": "Specify pages that when visited by anonymous users will be forced to login.",
+            "homepage": "https://www.drupal.org/project/anonymous_login",
+            "support": {
+                "source": "https://git.drupalcode.org/project/anonymous_login"
             }
         },
         {
@@ -5275,16 +5330,16 @@
         },
         {
             "name": "roflcopterdorrie/recipes",
-            "version": "0.1.6",
+            "version": "0.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roflcopterDorrie/recipes.git",
-                "reference": "72e9edac4a24537712e1d429754e5e99cd06fce6"
+                "reference": "c0b7ca939cafd64054ea4b44e20518d0a89dccba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roflcopterDorrie/recipes/zipball/72e9edac4a24537712e1d429754e5e99cd06fce6",
-                "reference": "72e9edac4a24537712e1d429754e5e99cd06fce6",
+                "url": "https://api.github.com/repos/roflcopterDorrie/recipes/zipball/c0b7ca939cafd64054ea4b44e20518d0a89dccba",
+                "reference": "c0b7ca939cafd64054ea4b44e20518d0a89dccba",
                 "shasum": ""
             },
             "require": {
@@ -5307,9 +5362,9 @@
             "description": "A recipe module for Drupal that allows users to quickly create and manage recipes.",
             "support": {
                 "issues": "https://github.com/roflcopterDorrie/recipes/issues",
-                "source": "https://github.com/roflcopterDorrie/recipes/tree/0.1.6"
+                "source": "https://github.com/roflcopterDorrie/recipes/tree/0.1.7"
             },
-            "time": "2026-06-22T23:09:41+00:00"
+            "time": "2026-06-24T06:07:31+00:00"
         },
         {
             "name": "sebastian/diff",
@@ -8298,7 +8353,64 @@
             "time": "2024-07-17T10:09:02+00:00"
         }
     ],
-    "packages-dev": [],
+    "packages-dev": [
+        {
+            "name": "drupal/ckeditor5_dev",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/ckeditor5_dev.git",
+                "reference": "2.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ckeditor5_dev-2.0.1.zip",
+                "reference": "2.0.1",
+                "shasum": "0187766ebb9e919ab629c1d7ffb6146f175d0011"
+            },
+            "require": {
+                "drupal/core": "^10.5 || ^11 || ^12"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.1",
+                    "datestamp": "1781283934",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "bnjmnm",
+                    "homepage": "https://www.drupal.org/user/2369194"
+                },
+                {
+                    "name": "lauriii",
+                    "homepage": "https://www.drupal.org/user/1078742"
+                },
+                {
+                    "name": "smustgrave",
+                    "homepage": "https://www.drupal.org/user/3252890"
+                },
+                {
+                    "name": "wim leers",
+                    "homepage": "https://www.drupal.org/user/99777"
+                }
+            ],
+            "description": "Enables the CKEditor 5 Inspector and provides testing helpers.",
+            "homepage": "https://www.drupal.org/project/ckeditor5_dev",
+            "support": {
+                "source": "https://git.drupalcode.org/project/ckeditor5_dev"
+            }
+        }
+    ],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {},

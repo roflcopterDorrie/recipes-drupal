@@ -37,7 +37,9 @@
  * @see \Drupal\Core\Field\FieldPreprocess::preprocessField()
  */
 #}
-<h3>{{ label }}</h3>
+<h3 class="icon"><span class="material-symbols-outlined">
+menu_book
+</span> {{ label }}</h3>
 <ol class="steps">
   {% for item in items %}
     <li class="step">{{ item.content }}</li>

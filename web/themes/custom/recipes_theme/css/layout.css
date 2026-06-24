@@ -1,8 +1,13 @@
 body {
   font-family: 'Cabin', serif;
+  color: var(--text-color);
   font-size: 1.25em;
   margin: 0;
   background: lightgray;
+}
+
+p {
+  max-width: 46rem;
 }
 
 .layout-container {
@@ -14,7 +19,6 @@ body {
 
   display: flex;
   flex-direction: column;  
-  row-gap: 1rem;
 
   @media (min-width: 768px) {
     padding: 0rem 1em 1rem 1rem;

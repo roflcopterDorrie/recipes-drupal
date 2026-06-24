@@ -1,64 +1,240 @@
-.recipes_image_preview {
-  max-width: 350px;
+/* 1. Setup global form variables for easy customization */
+:root {
+  --primary-color: #0a694b;
+  --secondary-color: #e76124;
+  --text-color: #1f2937;
 }
+
+/* Recipes */
+/*.recipes_image_preview {
+  max-width: 350px;
+}*/
+
+
 
 .recipe {
-  img {
-    max-width: 350px;
-    height: auto;
-  }
-}
+  .recipe-card {
+    margin-top: 1rem;
+    max-width: 25rem;
 
+    border-bottom: 1px solid #0a694b;
+    border-top: 1px solid #d1d1d1;
 
-.ingredients {
-  padding-left: 0;
-  list-style-type: none;
-}
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      z-index: 1;
+    }
 
-.ingredient {
-
-  color: black;
-  display: inline-block;
-
-  .ingredient__name {
-    font-weight: 700;
-  }
-
-  .ingredient__extra {
-    color: #565656;
-  }
-}
-
-.steps {
-  list-style-position: inside;
-  padding-left: 0;
-
-  @media (min-width: 768px) {
-    list-style-type: decimal;
-    padding-left: 1em;
-  }
-
-  li {
-    margin-bottom: 1.5em;
-
-    p {
+    .recipe-card__title {
+      width: auto;
+      font-weight: bold;
+      padding: 0.75rem;
       margin: 0;
-      display: inline;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 1.5rem;
+      margin: 1rem 0;
+
+      .recipe-title {
+        padding: 0;
+      }
     }
   }
 
-  .ingredient {
-    border: 1px solid #a1a1a1;
-    border-radius: 15px;
-    background: #eaeaea;
-    padding: 0px 6px;
-    margin: 1px 0px;
+  .recipe-details {
+    margin-top: 1rem;
   }
 
-  .ingredient__amount:not(:empty):has(~ .ingredient__name:not(:empty)),
-  .ingredient__name:not(:empty):has(~ .ingredient__extra:not(:empty)) {
-    margin-right: 0.25em;
+  .recipe-header {
+    position: relative;
+
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      z-index: 1;
+    }
+
+    margin: 1rem 0rem 1rem 0rem;
+    padding: 5rem 0 0 0;
+    border: 1px solid #076646;
+    border-left: 0.5rem solid #076646;
+
+    box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
+
+    @media (min-width: 768px) {
+      margin: 0 -2.5rem 1rem -2rem;
+      padding: 1rem 2rem;
+    }
   }
+
+  h1 {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    margin: 0;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background-color: #ffffff8c;
+    color: #076646;
+    padding: 0.5rem;
+    font-weight: normal;
+    font-size: 1.5rem;
+  }
+}
+
+h3.icon {
+  display: flex;
+  gap: 0.5rem;
+
+  .material-symbols-outlined {
+    color: var(--primary-color);
+  }
+}
+
+/* All ingredients */
+.ingredient__amount {
+  font-weight: normal;
+}
+
+.ingredient__name {
+  font-weight: 700;
+}
+
+.ingredient__extra {
+  color: #565656;
+  font-weight: normal;
+}
+
+/* List of ingredients before steps */
+ul.ingredients {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+details.details-ingredients summary {
+  display: flex;
+  gap: 0.5rem;
+  font-weight: bold;
+  font-size: 1.17em;
+  cursor: pointer;
+  user-select: none;
+  width: 100%;
+}
+
+
+details.details-ingredients summary::marker {
+  display: none;
+  content: "";
+}
+
+details.details-ingredients summary::-webkit-details-marker {
+  display: none;
+}
+
+details.details-ingredients summary::before {
+  content: "nutrition";
+  font-family: 'Material Symbols Outlined';
+  font-size: 1.5rem;
+  transition: transform 0.2s ease;
+  color: var(--primary-color);
+}
+
+details.details-ingredients summary::after {
+  content: "expand_more";
+  font-family: 'Material Symbols Outlined';
+  font-size: 1.5rem;
+  transition: transform 0.2s ease;
+  margin-left: auto;
+}
+
+details.details-ingredients[open] summary::after {
+  transform: rotate(180deg);
+  color: var(--secondary-color);
+}
+
+.accordion-content {
+  padding: 1rem;
+  border-top: 1px solid #e2e8f0;
+  color: #334155;
+  background-color: #fff;
+}
+
+
+
+/* Steps */
+ol.steps {
+  padding: 0 1rem;
+
+  li.step {
+    margin-bottom: 1.5rem;
+
+    p {
+      margin: 0;
+    }
+
+    &::marker {
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    .ingredient {
+      font-weight: bold;
+      color: black;
+      font-size: 1.15rem;
+    }
+  }
+
+  /* List of ingredients under a step */
+  ul.ingredient-list {
+
+    list-style: none;
+    padding: 0.25rem 0 0 0.5rem;
+
+    li.ingredient {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+
+      padding: 0px;
+      margin: 0px;
+      color: var(--text-color);
+      font-size: 1rem;
+
+      border: none;
+      background: none;
+
+      &::before {
+        content: "fork_spoon";
+        font-family: 'Material Symbols Outlined';
+        font-size: 1.25rem;
+        color: var(--secondary-color);
+        font-weight: normal;
+        flex-shrink: 0;
+      }
+    }
+
+    .ingredient__amount:has(~ .ingredient__name),
+    .ingredient__name:has(~ .ingredient__extra) {
+      margin-right: 0.25em;
+    }
+  }
+
 }
 
 /* Recipe card */

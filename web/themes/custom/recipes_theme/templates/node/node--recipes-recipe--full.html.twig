@@ -61,17 +61,13 @@
 #}
 <article{{ attributes.addClass("recipe") }}>
 
-  {{ title_prefix }}
-  {% if label %}
-    <h2{{ title_attributes }}>
-      {% if view_mode != "full" %}
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-      {% else %}
-      {{ label }}
-      {% endif %}
-    </h2>
-  {% endif %}
-  {{ title_suffix }}
+  <div class="recipe-card">
+    {{ content.field_recipes_image }}
+    <h1 class="recipe-card__title">
+        {{ label }}
+    </h1>
+    
+  </div>
 
   {% if display_submitted %}
     <footer>
@@ -82,8 +78,8 @@
     </footer>
   {% endif %}
 
-  <div{{ content_attributes }}>
-    {{ content }}
+  <div class="recipe-details">
+    {{ content|without('field_recipes_image') }}
   </div>
 
 </article>

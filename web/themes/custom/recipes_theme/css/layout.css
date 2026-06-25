@@ -6,7 +6,7 @@ body {
   background: lightgray;
 }
 
-p {
+p, li {
   max-width: 46rem;
 }
 
@@ -18,7 +18,7 @@ p {
   margin: 0;
 
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
 
   @media (min-width: 768px) {
     padding: 0rem 1em 1rem 1rem;
@@ -29,6 +29,14 @@ p {
     padding: 0rem 2em 2rem 2rem;
     margin: auto;
     max-width: 1090px;
+  }
+}
+
+.layout-content {
+  margin-top: 1rem;
+
+  @media (min-width: 768px) {
+    margin-top: 2rem;
   }
 }
 

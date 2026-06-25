@@ -11,90 +11,47 @@
 }*/
 
 
-
+/* Full recipe page */
 .recipe {
-  .recipe-card {
-    margin-top: 1rem;
-    max-width: 25rem;
 
-    border-bottom: 1px solid #0a694b;
-    border-top: 1px solid #d1d1d1;
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem;
+  background: #fffefd;
 
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
-      z-index: 1;
-    }
-
-    .recipe-card__title {
-      width: auto;
-      font-weight: bold;
-      padding: 0.75rem;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-size: 1.5rem;
-      margin: 1rem 0;
-
-      .recipe-title {
-        padding: 0;
-      }
-    }
+  @media (min-width: 768px) {
+    padding: 1rem;
   }
+
 
   .recipe-details {
     margin-top: 1rem;
-  }
-
-  .recipe-header {
-    position: relative;
-
-    overflow: hidden;
 
     img {
-      position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
-      z-index: 1;
-    }
-
-    margin: 1rem 0rem 1rem 0rem;
-    padding: 5rem 0 0 0;
-    border: 1px solid #076646;
-    border-left: 0.5rem solid #076646;
-
-    box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
-
-    @media (min-width: 768px) {
-      margin: 0 -2.5rem 1rem -2rem;
-      padding: 1rem 2rem;
+      height: auto;
+      margin-bottom: 1rem;
     }
   }
 
   h1 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin: 0.5rem 0 0 0;
+    text-align: center;
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 2rem;
+
+    display: inline-block;
     position: relative;
-    z-index: 2;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    margin: 0;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    background-color: #ffffff8c;
-    color: #076646;
-    padding: 0.5rem;
-    font-weight: normal;
-    font-size: 1.5rem;
+    /* Creates space below the text for the underline */
+    padding-bottom: 1.5rem;
+    /* Uses a custom SVG path that mimics a marker stroke */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10' preserveAspectRatio='none'%3E%3Cpath d='M 2 6 Q 25 3, 50 6 T 98 4' fill='none' stroke='%230a694b' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-size: 100% 12px;
+    background-repeat: no-repeat;
+    background-position: bottom left;
   }
 }
 
@@ -181,11 +138,26 @@ details.details-ingredients[open] summary::after {
 ol.steps {
   padding: 0 1rem;
 
+  list-style: none;
+  counter-reset: my-counter;
+  padding-left: 0;
+
   li.step {
-    margin-bottom: 1.5rem;
+
+    counter-increment: my-counter;
+    margin-bottom: 2rem;
+
+    &::before {
+      content: counter(my-counter) ". ";
+      font-weight: bold;
+      display: inline;
+      color: var(--primary-color);
+      margin-right: 0.25rem;
+    }
 
     p {
       margin: 0;
+      display: inline;
     }
 
     &::marker {
@@ -258,16 +230,11 @@ ol.steps {
 
   .recipe-card__title {
     font-weight: 300;
-    width: 100%;
-    font-size: 1em;
+    font-size: 1rem;
     background: rgba(255, 255, 255, 0.75);
-    padding: 5px 0px 5px 15px;
-    margin: 0 45px 0 0;
+    padding: 5px 35px 5px 15px;
+    margin: 0;
     height: 100%;
-
-    .recipe-title {
-      padding-right: 3rem;
-    }
   }
 
   .actions {
@@ -279,7 +246,7 @@ ol.steps {
 
 .recipes-card-list {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.5rem;
   align-items: start;
 

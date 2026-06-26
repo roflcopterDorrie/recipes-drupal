@@ -1,6 +1,7 @@
 # STAGE 1: Optimization (The "Chef")
 FROM composer:2 as builder
 WORKDIR /opt/drupal 
+
 COPY composer.json composer.lock ./
 RUN composer install --no-dev --optimize-autoloader --no-interaction --ignore-platform-reqs
 # Ensure index.php and .htaccess are actually created
@@ -35,7 +36,6 @@ RUN mkdir -p /opt/drupal/web/sites/default/files
 # Finalize permissions.
 RUN chown -R www-data:www-data /opt/drupal/web/sites/default/files && \
     chown -R www-data:www-data /opt/drupal/web/themes/custom
-
 
 # Redis and APCu
 RUN apk add --no-cache --virtual .build-deps $PHPIZE_DEPS && \

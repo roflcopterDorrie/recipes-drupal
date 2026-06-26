@@ -22,7 +22,8 @@ services:
 
   # Drupal.
   drupal:
-    image: recipes/drupal-local
+    image: ghcr.io/roflcopterdorrie/recipes-drupal-drupal:latest
+    container_name: recipes_drupal
     restart: always
     env_file: .env
     volumes:
@@ -38,6 +39,7 @@ services:
   # Database.
   db:
     image: mariadb:10.11
+    container_name: recipes_db
     restart: always
     env_file: .env
     command: --transaction-isolation=READ-COMMITTED
@@ -46,7 +48,8 @@ services:
 
   # Web server.
   nginx:
-    image: recipes/nginx-local
+    image: ghcr.io/roflcopterdorrie/recipes-drupal-nginx:latest
+    container_name: recipes_nginx
     restart: always
     ports:
       - "${PORT}:80"

@@ -52,8 +52,8 @@ services:
     container_name: recipes_nginx
     restart: always
     ports:
-      - "${PORT}:80"
-      - "${SECURE_PORT}:443"
+      - 80:80
+      - 443:443
     volumes:
       - drupal_files:/opt/drupal/web/sites/default/files:ro
     networks:

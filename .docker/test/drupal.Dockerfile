@@ -15,7 +15,7 @@ RUN --mount=type=bind,source=./.docker/test/zscaler.crt,target=/zscaler.crt \
     fi
 
 COPY composer.json composer.lock ./
-RUN composer install --no-dev --optimize-autoloader --no-interaction --ignore-platform-reqs --prefer-source
+RUN composer install --optimize-autoloader --no-interaction --ignore-platform-reqs --prefer-source
 # Ensure index.php and .htaccess are actually created
 RUN composer drupal:scaffold
 
@@ -46,8 +46,9 @@ COPY --from=builder /opt/drupal/vendor /opt/drupal/vendor
 COPY --from=builder /opt/drupal/web/modules/contrib /opt/drupal/web/modules/contrib
 COPY --from=builder /opt/drupal/web/themes/contrib /opt/drupal/web/themes/contrib
 
-# Copy the recipes-theme theme. Remove this once it gets its own repo.
+# Add anything custom.
 COPY web/themes/custom /opt/drupal/web/themes/custom
+COPY web/modules/custom /opt/drupal/web/modules/custom
 
 # Make sure the files folder exists.
 RUN mkdir -p /opt/drupal/web/sites/default/files

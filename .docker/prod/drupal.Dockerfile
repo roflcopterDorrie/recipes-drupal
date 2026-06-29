@@ -29,8 +29,9 @@ COPY --from=builder /opt/drupal/vendor /opt/drupal/vendor
 COPY --from=builder /opt/drupal/web/modules/contrib /opt/drupal/web/modules/contrib
 COPY --from=builder /opt/drupal/web/themes/contrib /opt/drupal/web/themes/contrib
 
-# Copy the recipes-theme theme. Remove this once it gets its own repo.
+# Add anything custom.
 COPY web/themes/custom /opt/drupal/web/themes/custom
+COPY web/modules/custom /opt/drupal/web/modules/custom
 
 # Make sure the files folder exists.
 RUN mkdir -p /opt/drupal/web/sites/default/files

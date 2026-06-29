@@ -1,0 +1,28 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 0c10e234-8038-4bd2-8970-9c7cb3aacc6f
+  bundle: recipes_ingredient_aisle
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Fresh Fruits and Vegetables'
+  description:
+    -
+      value: 'All fresh produce found in the refrigerated produce section. Includes fruits, vegetables, leafy greens, mushrooms, and fresh herbs.'
+      format: ''
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      target_id: 0
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 1

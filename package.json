@@ -1,0 +1,23 @@
+{
+  "name": "html",
+  "version": "1.0.0",
+  "description": "Install DDEV https://docs.ddev.com/en/stable/users/install/ddev-installation/",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roflcopterDorrie/recipes-drupal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/roflcopterDorrie/recipes-drupal/issues"
+  },
+  "homepage": "https://github.com/roflcopterDorrie/recipes-drupal#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.0.1"
+  }
+}

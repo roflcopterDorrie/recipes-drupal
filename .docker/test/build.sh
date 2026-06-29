@@ -13,14 +13,19 @@ docker compose -f ./.docker/test/docker-compose.yml up -d
 
 # Install the site config.
 docker compose -f ./.docker/test/docker-compose.yml exec -it drupal drush sql:drop -y
-# CONFIG_UUID=$(grep '^uuid:' config/sync/system.site.yml | awk '{print $2}')
-# docker compose -f ./.docker/test/docker-compose.yml exec -it drupal drush config:set system.site uuid "$CONFIG_UUID" -y
 docker compose -f ./.docker/test/docker-compose.yml exec -it drupal drush si --existing-config -y
 
 # Run any updates.
 docker compose -f ./.docker/test/docker-compose.yml exec -it drupal drush updb -y
 docker compose -f ./.docker/test/docker-compose.yml exec -it drupal drush cr
 
+# Import test content.
+docker compose -f ./.docker/test/docker-compose.yml exec -it drupal drush en default_content
+docker compose -f ./.docker/test/docker-compose.yml exec -it drupal drush en recipes_default_content
+
+# Create a recipe user.
+docker compose -f ./.docker/test/docker-compose.yml exec -it drupal drush user:create recipe_user --mail="example@example.com" --password="password"
+docker compose -f ./.docker/test/docker-compose.yml exec -it drupal drush user:role:add recipes_user recipe_user
 
 # Run playwright tests
-# docker compose -f ./.docker/test/docker-compose.yml down
+ddev npx playwright test

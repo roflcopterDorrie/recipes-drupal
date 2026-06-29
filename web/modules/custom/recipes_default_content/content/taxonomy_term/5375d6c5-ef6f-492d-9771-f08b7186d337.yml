@@ -1,0 +1,28 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: 5375d6c5-ef6f-492d-9771-f08b7186d337
+  bundle: recipes_ingredient_aisle
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Oils
+  description:
+    -
+      value: 'Cooking oils and specialty oils. Includes olive oil, vegetable oil, sesame oil, avocado oil.'
+      format: ''
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      target_id: 0
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 1

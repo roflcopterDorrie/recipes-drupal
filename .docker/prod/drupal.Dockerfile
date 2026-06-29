@@ -3,13 +3,22 @@ FROM composer:2 as builder
 WORKDIR /opt/drupal 
 
 COPY composer.json composer.lock ./
-RUN composer install --no-dev --optimize-autoloader --no-interaction --ignore-platform-reqs
+RUN composer install --no-dev --optimize-autoloader --no-interaction --ignore-platform-reqs --prefer-source
 # Ensure index.php and .htaccess are actually created
 RUN composer drupal:scaffold
 
 # STAGE 2: Production (The "Plate")
 FROM drupal:11-fpm-alpine
 WORKDIR /opt/drupal
+
+# Use a prod settings file.
+COPY web/sites/default/settings.prod.php /opt/drupal/web/sites/default/settings.php
+
+# Redis and APCu
+RUN apk add --no-cache --virtual .build-deps $PHPIZE_DEPS && \
+    pecl install apcu redis && \
+    docker-php-ext-enable apcu redis && \
+    apk del .build-deps
 
 # Make sure our composer files are in the final build.
 COPY --from=builder /opt/drupal/composer.json /opt/drupal/composer.json
@@ -23,13 +32,6 @@ COPY --from=builder /opt/drupal/web/themes/contrib /opt/drupal/web/themes/contri
 # Copy the recipes-theme theme. Remove this once it gets its own repo.
 COPY web/themes/custom /opt/drupal/web/themes/custom
 
-# Use a prod settings file.
-COPY web/sites/default/settings.prod.php /opt/drupal/web/sites/default/settings.php
-
-# Ensure everything in the web root is readable
-RUN chmod -R 755 /opt/drupal/web && \
-    chmod -R 755 /opt/drupal/vendor
-
 # Make sure the files folder exists.
 RUN mkdir -p /opt/drupal/web/sites/default/files
 
@@ -37,8 +39,5 @@ RUN mkdir -p /opt/drupal/web/sites/default/files
 RUN chown -R www-data:www-data /opt/drupal/web/sites/default/files && \
     chown -R www-data:www-data /opt/drupal/web/themes/custom
 
-# Redis and APCu
-RUN apk add --no-cache --virtual .build-deps $PHPIZE_DEPS && \
-    pecl install apcu redis && \
-    docker-php-ext-enable apcu redis && \
-    apk del .build-deps
+# Copy across all the config files ready for import.
+COPY config /opt/drupal/config  

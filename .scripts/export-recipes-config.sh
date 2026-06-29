@@ -3,7 +3,7 @@
 
 
 # Export all config first
-drush cex -y
+ddev drush cex -y
 
 DEST="web/modules/contrib/recipes/config/install"
 
@@ -27,7 +27,7 @@ done
 cp config/sync/recipes.settings.yml "$DEST"
 
 # Clear out the config folder.
-rm -f config/sync/*.yml
+# rm -f config/sync/*.yml
 
 echo "✅ Copied config files"
 

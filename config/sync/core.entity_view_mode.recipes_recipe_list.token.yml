@@ -1,0 +1,11 @@
+uuid: b527826c-5302-4f88-bebc-391152a2db90
+langcode: en
+status: true
+dependencies:
+  module:
+    - recipes
+id: recipes_recipe_list.token
+label: Token
+description: null
+targetEntityType: recipes_recipe_list
+cache: true

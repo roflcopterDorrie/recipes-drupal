@@ -1,0 +1,22 @@
+uuid: fbdb42b1-9b61-43bd-be37-0a323327393d
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+  enforced:
+    module:
+      - recipes
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: WfWhzHi-zxqfQJOgDpim_YbjVHQ8M1pSthzKMKgBU1s
+name: Recipe
+type: recipes_recipe
+description: null
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

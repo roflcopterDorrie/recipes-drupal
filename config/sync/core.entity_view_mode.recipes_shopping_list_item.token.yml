@@ -1,0 +1,11 @@
+uuid: 8248d8fd-9487-4c55-9ae6-6f295a698a92
+langcode: en
+status: true
+dependencies:
+  module:
+    - recipes
+id: recipes_shopping_list_item.token
+label: Token
+description: null
+targetEntityType: recipes_shopping_list_item
+cache: true

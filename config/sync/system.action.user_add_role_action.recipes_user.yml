@@ -1,0 +1,19 @@
+uuid: ed89ad77-60fe-4892-9d8f-1130cac1d1d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.recipes_user
+  module:
+    - user
+  enforced:
+    module:
+      - recipes
+_core:
+  default_config_hash: sSxa4LYa7xkxxW83snk39aRU4XOlOzGKx-0DVyRddd4
+id: user_add_role_action.recipes_user
+label: 'Add the Recipe user role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: recipes_user

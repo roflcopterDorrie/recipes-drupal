@@ -1,0 +1,25 @@
+uuid: 7e4e61c8-d65e-48e2-afd3-9db66bf81049
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.recipes-recipes
+  module:
+    - system
+  theme:
+    - recipes_theme
+id: recipes_theme_recipes
+theme: recipes_theme
+region: primary_menu
+weight: -1
+provider: null
+plugin: 'system_menu_block:recipes-recipes'
+settings:
+  id: 'system_menu_block:recipes-recipes'
+  label: Recipes
+  label_display: visible
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

@@ -1,0 +1,24 @@
+uuid: 1b2dea88-4e2d-405e-b62e-722cdf4db8b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_recipes_ingredient_extra
+    - node.type.recipes_ingredient
+  enforced:
+    module:
+      - recipes
+_core:
+  default_config_hash: Qo1gEb91rj_Td-xhm5ua9oAyLTBHqZDbeHBV_-dzaUA
+id: node.recipes_ingredient.field_recipes_ingredient_extra
+field_name: field_recipes_ingredient_extra
+entity_type: node
+bundle: recipes_ingredient
+label: 'Extra information'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,29 @@
+uuid: c3278291-0ae8-4bab-8ba9-01bce30ccd4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_recipes_steps
+    - filter.format.recipes_step
+    - node.type.recipes_recipe
+  module:
+    - text
+  enforced:
+    module:
+      - recipes
+_core:
+  default_config_hash: 4XXASrtH24Q5fAT2zxU7_aD0v3ir7UkH9uuEtT_Hhh8
+id: node.recipes_recipe.field_recipes_steps
+field_name: field_recipes_steps
+entity_type: node
+bundle: recipes_recipe
+label: Steps
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - recipes_step
+field_type: text_long

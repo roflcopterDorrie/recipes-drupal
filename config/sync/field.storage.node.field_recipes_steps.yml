@@ -1,0 +1,24 @@
+uuid: c974b308-fdec-4cf1-9d5e-e5b4fbbb5141
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+  enforced:
+    module:
+      - recipes
+_core:
+  default_config_hash: pXGGH46fsk0smzckVrE9ySTb-aPvRhnUsO7lm6qWnrQ
+id: node.field_recipes_steps
+field_name: field_recipes_steps
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

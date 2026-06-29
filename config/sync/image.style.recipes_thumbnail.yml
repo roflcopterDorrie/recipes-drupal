@@ -1,0 +1,20 @@
+uuid: b00d781a-78f3-434b-b553-b02b58cd1413
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - recipes
+_core:
+  default_config_hash: ZSy1c8rvvUGyLwRe82ErEY_NdkXOrnw7MbDYoMU01Vg
+name: recipes_thumbnail
+label: 'Recipes thumbnail'
+effects:
+  583ac0c1-2bbb-43a4-9ba2-e090414b8405:
+    uuid: 583ac0c1-2bbb-43a4-9ba2-e090414b8405
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 850
+      height: 450
+      anchor: center-center

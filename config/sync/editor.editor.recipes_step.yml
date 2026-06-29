@@ -1,0 +1,23 @@
+uuid: 93bd2f09-2071-494a-a62f-23534e744246
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.recipes_step
+  module:
+    - ckeditor5
+  enforced:
+    module:
+      - recipes
+_core:
+  default_config_hash: 0-Mp7mNv22qiygi_sOZ0UBtcUt_eBTBY97r1xTTUA7w
+format: recipes_step
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - bold
+      - insertIngredient
+  plugins: {  }
+image_upload:
+  status: false

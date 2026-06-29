@@ -1,0 +1,103 @@
+uuid: ac29027d-fd72-4c7b-8b54-c16308e87a0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.recipes_recipe.field_recipes_image
+    - field.field.node.recipes_recipe.field_recipes_ingredients
+    - field.field.node.recipes_recipe.field_recipes_steps
+    - field.field.node.recipes_recipe.field_recipes_tags
+    - node.type.recipes_recipe
+  module:
+    - inline_entity_form
+    - media_library
+    - path
+    - text
+  enforced:
+    module:
+      - recipes
+_core:
+  default_config_hash: MYeXUPy4TcGQJhm5RLjNtSa8fkh6wuYVLHd4zrMMNVc
+id: node.recipes_recipe.default
+targetEntityType: node
+bundle: recipes_recipe
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_recipes_image:
+    type: media_library_widget
+    weight: 5
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_recipes_ingredients:
+    type: inline_entity_form_simple
+    weight: 7
+    region: content
+    settings:
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+      revision: false
+    third_party_settings: {  }
+  field_recipes_steps:
+    type: text_textarea
+    weight: 6
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_recipes_tags:
+    type: entity_reference_autocomplete_tags
+    weight: 8
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  promote: true
+  sticky: true

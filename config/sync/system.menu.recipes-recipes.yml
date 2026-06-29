@@ -1,0 +1,13 @@
+uuid: a2d899b1-c1a6-460d-bacd-7dfd1752d9e3
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - recipes
+_core:
+  default_config_hash: ZxItRMOBMXu2hbe3kwhSlYwfvNsSDjbbR_IlTmHemE4
+id: recipes-recipes
+label: Recipes
+description: ''
+locked: false

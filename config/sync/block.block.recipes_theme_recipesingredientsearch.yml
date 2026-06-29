@@ -1,0 +1,33 @@
+uuid: 05d3fe9b-5f4b-4f11-b7b9-2fd40bb47456
+langcode: en
+status: true
+dependencies:
+  module:
+    - recipes
+    - system
+    - user
+  theme:
+    - recipes_theme
+id: recipes_theme_recipesingredientsearch
+theme: recipes_theme
+region: content
+weight: 0
+provider: null
+plugin: recipes_ingredient_search
+settings:
+  id: recipes_ingredient_search
+  label: 'Recipes - Ingredient Search'
+  label_display: '0'
+  provider: recipes
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /recipes
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated

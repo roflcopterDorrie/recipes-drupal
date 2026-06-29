@@ -58,10 +58,10 @@ module:
   views_ui: 0
   pathauto: 1
   views: 10
-  standard: 1000
+  minimal: 1000
 theme:
   olivero: 0
   claro: 0
   recipes_theme: 0
   gin: 0
-profile: standard
+profile: minimal

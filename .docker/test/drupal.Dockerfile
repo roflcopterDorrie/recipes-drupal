@@ -5,17 +5,17 @@ WORKDIR /opt/drupal
 ARG LOCAL_CERT=false
 
 # Install CA only if running locally
-RUN --mount=type=bind,source=.docker/test,target=/zscaler.crt \
-    if [ "$LOCAL_CERT" = "true" ] && [ -f /zscaler.crt ]; then \
+RUN --mount=type=bind,source=./.docker/test/zscaler.crt,target=/zscaler.crt \
+    if [ "$LOCAL_CERT" = "true" ]; then \
         echo "Installing local Zscaler cert"; \
-        cp /mnt/zscaler.crt /usr/local/share/ca-certificates/zscaler.crt && \
+        cp /zscaler.crt /usr/local/share/ca-certificates/zscaler.crt && \
         update-ca-certificates; \
     else \
         echo "Skipping cert install"; \
     fi
 
 COPY composer.json composer.lock ./
-RUN composer install --no-dev --optimize-autoloader --no-interaction --ignore-platform-reqs
+RUN composer install --no-dev --optimize-autoloader --no-interaction --ignore-platform-reqs --prefer-source
 # Ensure index.php and .htaccess are actually created
 RUN composer drupal:scaffold
 

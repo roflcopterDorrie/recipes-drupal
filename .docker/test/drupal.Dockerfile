@@ -5,7 +5,7 @@ WORKDIR /opt/drupal
 ARG LOCAL_CERT=false
 
 # Install CA only if running locally
-RUN --mount=type=bind,source=./.docker/test/zscaler.crt,target=/zscaler.crt \
+RUN --mount=type=bind,source=./.docker/test,target=/certs \
     if [ "$LOCAL_CERT" = "true" ]; then \
         echo "Installing local Zscaler cert"; \
         cp /zscaler.crt /usr/local/share/ca-certificates/zscaler.crt && \

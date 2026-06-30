@@ -1,6 +1,6 @@
 name: 'Recipes - Default content'
 type: module
-hidden: TRUE
+hidden: FALSE
 description: 'Used in testing to ensure modules can declare content.'
 package: Custom
 core_version_requirement: ^10 || ^11

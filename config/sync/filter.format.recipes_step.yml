@@ -1,4 +1,3 @@
-uuid: d6ab9453-11f1-4261-94df-3603aec05966
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,7 @@ dependencies:
   enforced:
     module:
       - recipes
-_core:
-  default_config_hash: mA3vv71yJ6iFA6UjJBdWFPcGfTb44Qrg7PNaNWJ1NKA
+_core: null
 name: 'Recipe step'
 format: recipes_step
 weight: 0

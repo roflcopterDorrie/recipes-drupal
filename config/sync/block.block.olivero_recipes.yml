@@ -1,4 +1,4 @@
-uuid: 43ee00eb-368c-409c-a788-941dec9ce216
+uuid: 6b3561c3-ddf4-43e0-a412-f9b2f5c389bb
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,11 @@ dependencies:
   module:
     - system
   theme:
-    - recipes_theme
-id: recipes_theme_recipes
-theme: recipes_theme
-region: primary_menu
-weight: -3
+    - olivero
+id: olivero_recipes
+theme: olivero
+region: secondary_menu
+weight: 0
 provider: null
 plugin: 'system_menu_block:recipes-recipes'
 settings:

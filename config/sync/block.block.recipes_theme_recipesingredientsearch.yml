@@ -1,11 +1,10 @@
-uuid: 05d3fe9b-5f4b-4f11-b7b9-2fd40bb47456
+uuid: 11544f35-a964-4095-8f03-9d397c6ffc88
 langcode: en
 status: true
 dependencies:
   module:
     - recipes
     - system
-    - user
   theme:
     - recipes_theme
 id: recipes_theme_recipesingredientsearch
@@ -24,10 +23,3 @@ visibility:
     id: request_path
     negate: false
     pages: /recipes
-  user_role:
-    id: user_role
-    negate: false
-    context_mapping:
-      user: '@user.current_user_context:current_user'
-    roles:
-      authenticated: authenticated

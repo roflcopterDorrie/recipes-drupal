@@ -23,6 +23,7 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  gemini_provider: 0
   help: 0
   history: 0
   hook_event_dispatcher: 0
@@ -44,11 +45,13 @@ module:
   path: 0
   path_alias: 0
   recipes: 0
+  redis: 0
   rest: 0
   search: 0
   serialization: 0
   shortcut: 0
   system: 0
+  tagify: 0
   taxonomy: 0
   text: 0
   token: 0
@@ -58,10 +61,10 @@ module:
   views_ui: 0
   pathauto: 1
   views: 10
-  minimal: 1000
+  standard: 1000
 theme:
   olivero: 0
   claro: 0
   recipes_theme: 0
   gin: 0
-profile: minimal
+profile: standard

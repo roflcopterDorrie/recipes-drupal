@@ -1,0 +1,36 @@
+uuid: 76db0098-69c9-400e-aba9-5e706af5e4c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.recipes_image.field_recipes_image
+    - image.style.large
+    - media.type.recipes_image
+  module:
+    - image
+  enforced:
+    module:
+      - recipes
+_core:
+  default_config_hash: kgzxpmIAST6TD7dqr9XCY1C_in9l7LNLnF7KDoNH4YU
+id: media.recipes_image.default
+targetEntityType: media
+bundle: recipes_image
+mode: default
+content:
+  field_recipes_image:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: large
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

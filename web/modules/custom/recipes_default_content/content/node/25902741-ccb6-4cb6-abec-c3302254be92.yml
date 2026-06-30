@@ -1,0 +1,48 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 25902741-ccb6-4cb6-abec-c3302254be92
+  bundle: recipes_ingredient
+  default_langcode: en
+  depends:
+    574c08d8-17e2-40b6-ba0f-2267407829d9: taxonomy_term
+    5375d6c5-ef6f-492d-9771-f08b7186d337: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: oil
+  created:
+    -
+      value: 1781478318
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 1
+  field_recipes_ingredient:
+    -
+      entity: 574c08d8-17e2-40b6-ba0f-2267407829d9
+  field_recipes_ingredient_aisle:
+    -
+      entity: 5375d6c5-ef6f-492d-9771-f08b7186d337
+  field_recipes_ingredient_amount:
+    -
+      value: '1/2 tbsp '
+  field_recipes_ingredient_extra:
+    -
+      value: 'or water (if oil-free)'

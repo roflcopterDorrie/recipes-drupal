@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7fdd8dfa43eb5cf36ad573221ede9f99",
+    "content-hash": "3d318ef44bcfda6a5dcf099ad71b2a49",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5330,16 +5330,16 @@
         },
         {
             "name": "roflcopterdorrie/recipes",
-            "version": "0.1.8",
+            "version": "0.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roflcopterDorrie/recipes.git",
-                "reference": "27529b82ba6186a059a9cbc7904a8a6fde71a54d"
+                "reference": "ec863d6c9d7ebf152ad90296e7b8f9e5702cf502"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roflcopterDorrie/recipes/zipball/27529b82ba6186a059a9cbc7904a8a6fde71a54d",
-                "reference": "27529b82ba6186a059a9cbc7904a8a6fde71a54d",
+                "url": "https://api.github.com/repos/roflcopterDorrie/recipes/zipball/ec863d6c9d7ebf152ad90296e7b8f9e5702cf502",
+                "reference": "ec863d6c9d7ebf152ad90296e7b8f9e5702cf502",
                 "shasum": ""
             },
             "require": {
@@ -5362,9 +5362,9 @@
             "description": "A recipe module for Drupal that allows users to quickly create and manage recipes.",
             "support": {
                 "issues": "https://github.com/roflcopterDorrie/recipes/issues",
-                "source": "https://github.com/roflcopterDorrie/recipes/tree/0.1.8"
+                "source": "https://github.com/roflcopterDorrie/recipes/tree/0.1.9"
             },
-            "time": "2026-06-25T06:21:37+00:00"
+            "time": "2026-06-30T04:30:13+00:00"
         },
         {
             "name": "sebastian/diff",
@@ -8409,11 +8409,90 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/ckeditor5_dev"
             }
+        },
+        {
+            "name": "drupal/default_content",
+            "version": "2.0.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/default_content.git",
+                "reference": "2.0.0-beta1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/default_content-2.0.0-beta1.zip",
+                "reference": "2.0.0-beta1",
+                "shasum": "c39aa30fa961854edbe318c0d43e2f3898658047"
+            },
+            "require": {
+                "drupal/core": "^9.1 || ^10 || ^11"
+            },
+            "require-dev": {
+                "drupal/hal": "^1 || ^2",
+                "drupal/paragraphs": "^1"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0-beta1",
+                    "datestamp": "1768258043",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9 || ^10 || ^11 || ^12"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "andypost",
+                    "homepage": "https://www.drupal.org/user/118908"
+                },
+                {
+                    "name": "benjy",
+                    "homepage": "https://www.drupal.org/user/1852732"
+                },
+                {
+                    "name": "berdir",
+                    "homepage": "https://www.drupal.org/user/214652"
+                },
+                {
+                    "name": "dawehner",
+                    "homepage": "https://www.drupal.org/user/99340"
+                },
+                {
+                    "name": "jibran",
+                    "homepage": "https://www.drupal.org/user/1198144"
+                },
+                {
+                    "name": "larowlan",
+                    "homepage": "https://www.drupal.org/user/395439"
+                },
+                {
+                    "name": "sam152",
+                    "homepage": "https://www.drupal.org/user/1485048"
+                }
+            ],
+            "description": "Imports default content when a module is enabled",
+            "homepage": "https://www.drupal.org/project/default_content",
+            "support": {
+                "source": "https://git.drupalcode.org/project/default_content"
+            }
         }
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "drupal/default_content": 10
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {},

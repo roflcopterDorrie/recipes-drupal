@@ -1,0 +1,48 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 1c27ba27-3a03-455d-a401-9a6e28d263ee
+  bundle: recipes_ingredient
+  default_langcode: en
+  depends:
+    0d4bbcc6-32f0-4c41-a37c-83a234a3022d: taxonomy_term
+    0c10e234-8038-4bd2-8970-9c7cb3aacc6f: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: onion
+  created:
+    -
+      value: 1781505431
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 1
+  field_recipes_ingredient:
+    -
+      entity: 0d4bbcc6-32f0-4c41-a37c-83a234a3022d
+  field_recipes_ingredient_aisle:
+    -
+      entity: 0c10e234-8038-4bd2-8970-9c7cb3aacc6f
+  field_recipes_ingredient_amount:
+    -
+      value: '1 medium (110 g)'
+  field_recipes_ingredient_extra:
+    -
+      value: chopped

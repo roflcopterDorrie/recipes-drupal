@@ -1,0 +1,21 @@
+source_directories:
+  - ./backup
+
+commands:
+  - before: action
+    when: [create]
+    run:
+      - mkdir -p ${PWD}/backup/drupal_files
+      - docker compose run --rm -v ${PWD}/backup/drupal_files:/backup_dir drupal sh -c "cp -a /opt/drupal/web/sites/default/files/. /backup_dir/"
+      - docker compose --env-file .env exec -T db sh -c 'mariadb-dump -u "$DRUPAL_DB_USER" -p"$DRUPAL_DB_PASSWORD" "$DRUPAL_DB_NAME"' > ${PWD}/backup/db_dump.sql
+
+# 3. Secure Encryption Passphrase
+encryption_passphrase: ${BORG_PASSPHRASE}
+
+# 5. Retention Policy (Pruning old backups automatically)
+keep_daily: 7
+keep_weekly: 4
+keep_monthly: 6
+
+repositories:
+  - path: ${BORG_REPO}

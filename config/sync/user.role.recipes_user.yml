@@ -1,0 +1,50 @@
+uuid: null
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.recipes_step
+    - media.type.recipes_image
+    - node.type.recipes_ingredient
+    - node.type.recipes_recipe
+    - taxonomy.vocabulary.recipes_ingredient
+    - taxonomy.vocabulary.tags
+  module:
+    - filter
+    - media
+    - node
+    - recipes
+    - system
+    - taxonomy
+  enforced:
+    module:
+      - recipes
+id: recipes_user
+label: 'Recipe user'
+weight: 4
+is_admin: false
+permissions:
+  - 'create recipes_image media'
+  - 'create recipes_ingredient content'
+  - 'create recipes_recipe content'
+  - 'create terms in recipes_ingredient'
+  - 'create terms in tags'
+  - 'delete media'
+  - 'delete own recipes_image media'
+  - 'delete own recipes_ingredient content'
+  - 'delete own recipes_recipe content'
+  - 'delete recipes_ingredient revisions'
+  - 'delete recipes_recipe revisions'
+  - 'edit own recipes_image media'
+  - 'edit own recipes_ingredient content'
+  - 'edit own recipes_recipe content'
+  - 'manage own recipe lists'
+  - 'revert recipes_ingredient revisions'
+  - 'revert recipes_recipe revisions'
+  - 'use text format recipes_step'
+  - 'view any recipes_image media revisions'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view recipes_ingredient revisions'
+  - 'view recipes_recipe revisions'
+  - 'view the administration theme'

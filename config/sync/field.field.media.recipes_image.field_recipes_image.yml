@@ -1,0 +1,43 @@
+uuid: 0ea739fa-d391-4251-a530-dd6bdc6dea22
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_recipes_image
+    - media.type.recipes_image
+  module:
+    - image
+  enforced:
+    module:
+      - recipes
+_core:
+  default_config_hash: hjhXQVI2DxgXobBBscUDwycb9dzZ7OaJJZLdY_vuSew
+id: media.recipes_image.field_recipes_image
+field_name: field_recipes_image
+entity_type: media
+bundle: recipes_image
+label: Image
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg webp'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: null
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

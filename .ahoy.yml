@@ -1,0 +1,42 @@
+# Ahoy Configuration Example
+# ==========================
+# This file demonstrates development workflows and Ahoy's powerful features.
+# Includes examples for various development stacks - adapt to your project's needs.
+# Copy this file to your project root as .ahoy.yml and customise it for your workflow.
+
+ahoyapi: v2
+
+# Global environment files (loaded in order, later files override earlier ones)
+env:
+  - .env
+  - .env.local
+
+# Optional - Custom usage description for your project
+usage: "Development workflow commands for your project"
+
+commands:
+ 
+  local-test:
+    usage: Run the test suite locally
+    cmd: |
+      echo "Running tests locally..."
+      npx playwright test --project=local
+
+  prod-test:
+    usage: Run the test suite against a prod like
+    cmd: |
+      echo "Running tests..."
+      npx playwright test --project=prod
+
+  prod-build:
+    usage: Build the application
+    cmd: |
+      echo "Building application..."
+      ./.docker/test/build.sh
+
+  prod-build-and-test:
+    usage: Build the application and run tests
+    cmd: |
+      echo "Building and testing..."
+      ./.docker/test/build.sh
+      npx playwright test --project=prod

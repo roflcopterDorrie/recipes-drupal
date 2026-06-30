@@ -1,0 +1,11 @@
+uuid: 3d7d5611-1d71-4d36-bb77-4dd0c0c857b9
+langcode: en
+status: true
+dependencies:
+  module:
+    - ai
+id: ai_file.token
+label: Token
+description: null
+targetEntityType: ai_file
+cache: true

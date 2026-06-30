@@ -81,6 +81,7 @@
         }
     },
     "require-dev": {
-        "drupal/ckeditor5_dev": "^2.0"
+        "drupal/ckeditor5_dev": "^2.0",
+        "drupal/default_content": "^2.0@beta"
     }
 }

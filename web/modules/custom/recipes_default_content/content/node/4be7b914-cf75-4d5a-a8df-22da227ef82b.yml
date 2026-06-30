@@ -1,0 +1,48 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 4be7b914-cf75-4d5a-a8df-22da227ef82b
+  bundle: recipes_ingredient
+  default_langcode: en
+  depends:
+    ddbdaa6b-dad1-4142-bda1-e64c831102cd: taxonomy_term
+    0c10e234-8038-4bd2-8970-9c7cb3aacc6f: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'bell pepper '
+  created:
+    -
+      value: 1782708232
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 1
+  field_recipes_ingredient:
+    -
+      entity: ddbdaa6b-dad1-4142-bda1-e64c831102cd
+  field_recipes_ingredient_aisle:
+    -
+      entity: 0c10e234-8038-4bd2-8970-9c7cb3aacc6f
+  field_recipes_ingredient_amount:
+    -
+      value: '3/4 cup (80 g)'
+  field_recipes_ingredient_extra:
+    -
+      value: chopped

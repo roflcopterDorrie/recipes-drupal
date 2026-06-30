@@ -1,0 +1,67 @@
+uuid: 64e5b797-d1b2-40cd-bd8c-8bcb2e10dee2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.recipes_ingredient.field_recipes_ingredient
+    - field.field.node.recipes_ingredient.field_recipes_ingredient_aisle
+    - field.field.node.recipes_ingredient.field_recipes_ingredient_amount
+    - field.field.node.recipes_ingredient.field_recipes_ingredient_extra
+    - node.type.recipes_ingredient
+  enforced:
+    module:
+      - recipes
+_core:
+  default_config_hash: EgwIYae5kBn503htagzYY_h7paWQos_gTWE3w7vt_Eg
+id: node.recipes_ingredient.default
+targetEntityType: node
+bundle: recipes_ingredient
+mode: default
+content:
+  field_recipes_ingredient:
+    type: entity_reference_autocomplete_tags
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 0
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_recipes_ingredient_aisle:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_recipes_ingredient_amount:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_recipes_ingredient_extra:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

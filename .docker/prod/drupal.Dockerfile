@@ -1,0 +1,44 @@
+# STAGE 1: Optimization (The "Chef")
+FROM composer:2 as builder
+WORKDIR /opt/drupal 
+
+COPY composer.json composer.lock ./
+RUN composer install --no-dev --optimize-autoloader --no-interaction --ignore-platform-reqs --prefer-source
+# Ensure index.php and .htaccess are actually created
+RUN composer drupal:scaffold
+
+# STAGE 2: Production (The "Plate")
+FROM drupal:11-fpm-alpine
+WORKDIR /opt/drupal
+
+# Use a prod settings file.
+COPY web/sites/default/settings.prod.php /opt/drupal/web/sites/default/settings.php
+
+# Redis and APCu
+RUN apk add --no-cache --virtual .build-deps $PHPIZE_DEPS && \
+    pecl install apcu redis && \
+    docker-php-ext-enable apcu redis && \
+    apk del .build-deps
+
+# Make sure our composer files are in the final build.
+COPY --from=builder /opt/drupal/composer.json /opt/drupal/composer.json
+COPY --from=builder /opt/drupal/composer.lock /opt/drupal/composer.lock
+
+# Copy across all the files that composer has just downloaded.
+COPY --from=builder /opt/drupal/vendor /opt/drupal/vendor  
+COPY --from=builder /opt/drupal/web/modules/contrib /opt/drupal/web/modules/contrib
+COPY --from=builder /opt/drupal/web/themes/contrib /opt/drupal/web/themes/contrib
+
+# Add anything custom.
+COPY web/themes/custom /opt/drupal/web/themes/custom
+COPY web/modules/custom /opt/drupal/web/modules/custom
+
+# Make sure the files folder exists.
+RUN mkdir -p /opt/drupal/web/sites/default/files
+
+# Finalize permissions.
+RUN chown -R www-data:www-data /opt/drupal/web/sites/default/files && \
+    chown -R www-data:www-data /opt/drupal/web/themes/custom
+
+# Copy across all the config files ready for import.
+COPY config /opt/drupal/config  

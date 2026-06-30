@@ -1,0 +1,28 @@
+uuid: 8cb9ba07-b9ad-47cc-8b5c-d07c4d9fcda3
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.recipes_recipe
+  module:
+    - node
+  enforced:
+    module:
+      - recipes
+_core:
+  default_config_hash: yAIyesM0mmgIHk6mv8_wEM_2Nz7Gyclb7J-ihksFLM4
+id: recipes_recipe
+label: Recipe
+type: 'canonical_entities:node'
+pattern: '/recipes/[node:title]'
+selection_criteria:
+  50411349-c84a-4b99-8ea8-ad595ae2babc:
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      recipes_recipe: recipes_recipe
+selection_logic: and
+weight: -5
+relationships: {  }

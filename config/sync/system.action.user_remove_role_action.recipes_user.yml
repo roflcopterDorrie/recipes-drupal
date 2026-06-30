@@ -1,0 +1,19 @@
+uuid: ea6ac49c-1818-46c2-bd82-2f41fef79b05
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.recipes_user
+  module:
+    - user
+  enforced:
+    module:
+      - recipes
+_core:
+  default_config_hash: 0lYd4Y5c19G02BBhZPTYXAHb-d7xp0QsXcBP3J2rllI
+id: user_remove_role_action.recipes_user
+label: 'Remove the Recipe user role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: recipes_user

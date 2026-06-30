@@ -1,0 +1,26 @@
+uuid: b71d6fa1-02c9-4b11-8660-99ad233560b7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+  enforced:
+    module:
+      - recipes
+_core:
+  default_config_hash: Vu6QvEHI-R-BF29_MRERQdosRF7NQVrlMrw8bQPDBjg
+id: node.field_recipes_ingredient_extra
+field_name: field_recipes_ingredient_extra
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

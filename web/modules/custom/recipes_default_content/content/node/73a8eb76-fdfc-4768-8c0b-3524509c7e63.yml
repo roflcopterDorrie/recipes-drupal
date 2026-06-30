@@ -1,0 +1,45 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 73a8eb76-fdfc-4768-8c0b-3524509c7e63
+  bundle: recipes_ingredient
+  default_langcode: en
+  depends:
+    30f3939d-6b22-450d-916b-c0d7fd5e514a: taxonomy_term
+    78faf64a-ed4e-4f17-9d00-3127bdec2c7c: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'curry powder'
+  created:
+    -
+      value: 1782708232
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 1
+  field_recipes_ingredient:
+    -
+      entity: 30f3939d-6b22-450d-916b-c0d7fd5e514a
+  field_recipes_ingredient_aisle:
+    -
+      entity: 78faf64a-ed4e-4f17-9d00-3127bdec2c7c
+  field_recipes_ingredient_amount:
+    -
+      value: '1/2 tbsp'

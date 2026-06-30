@@ -1,0 +1,68 @@
+services:
+
+  # This fixes the permissions on drupal_files so drupal can manage the files/ directory.
+  volume_init:
+    image: recipes/drupal-local
+    user: root
+    entrypoint: [] # Clear the Drupal startup script so it just runs our command
+    command: >
+      sh -c "mkdir -p /opt/drupal/web/sites/default/files && 
+             chown -R www-data:www-data /opt/drupal/web/sites/default/files && 
+             chmod -R 775 /opt/drupal/web/sites/default/files"
+    volumes:
+      - drupal_files:/opt/drupal/web/sites/default/files
+
+  # Redis Memory Cache Container
+  redis:
+    image: redis:7-alpine
+    restart: always
+    # Runs Redis with persistent saving turned off (best for pure cache speed)
+    command: redis-server --appendonly no
+    # No ports exposed to the public web; stays safely hidden in the internal network
+
+  # Drupal.
+  drupal:
+    image: ghcr.io/roflcopterdorrie/recipes-drupal-drupal:latest
+    container_name: recipes_drupal
+    restart: always
+    env_file: .env
+    volumes:
+      - drupal_files:/opt/drupal/web/sites/default/files
+    depends_on:
+      db:
+        condition: service_started
+      volume_init:
+        condition: service_completed_successfully
+      redis:
+        condition: service_started
+
+  # Database.
+  db:
+    image: mariadb:10.11
+    container_name: recipes_db
+    restart: always
+    env_file: .env
+    command: --transaction-isolation=READ-COMMITTED
+    volumes:
+      - db_data:/var/lib/mysql
+
+  # Web server.
+  nginx:
+    image: ghcr.io/roflcopterdorrie/recipes-drupal-nginx:latest
+    container_name: recipes_nginx
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - drupal_files:/opt/drupal/web/sites/default/files:ro
+    networks:
+      - default
+    depends_on:
+      drupal:
+        condition: service_started
+
+volumes:
+  drupal_files:
+  db_data:
+

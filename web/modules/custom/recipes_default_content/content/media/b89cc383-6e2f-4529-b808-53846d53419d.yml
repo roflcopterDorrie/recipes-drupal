@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: b89cc383-6e2f-4529-b808-53846d53419d
+  bundle: recipes_image
+  default_langcode: en
+  depends:
+    ab08726a-20cc-4a6c-ad8c-b56f8e1565a3: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: article_7866255_foods-you-should-eat-every-week-to-lose-weight_-04-d58e9c481bce4a29b47295baade4072d.jpg
+  created:
+    -
+      value: 1781478271
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  field_recipes_image:
+    -
+      entity: ab08726a-20cc-4a6c-ad8c-b56f8e1565a3
+      alt: Food
+      title: ''
+      width: 1500
+      height: 1000

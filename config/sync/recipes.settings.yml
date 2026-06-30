@@ -1,0 +1,4 @@
+_core:
+  default_config_hash: tw_3Z0D6BOifiUSKyMdaBGFZt_JqMtq0VsCdCFYUHOg
+prompt: 'You are a deterministic data extraction engine. Your only task is to extract recipe data from the user text and output it using the exact JSON format specified below. Use this JSON schema to structure the data: @schema ### Leave the image field blank. ### Allowed Taxonomy for Category: @ingredient_aisle_taxonomy ### Source Text: @website_text IMPORTANT: Do not include any text string before or after the json data. No formatting. I just want the string so it can be used with json_decode.'
+use_structured_json_ai_response: false

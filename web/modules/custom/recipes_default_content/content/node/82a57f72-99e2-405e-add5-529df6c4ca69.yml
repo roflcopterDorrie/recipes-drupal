@@ -1,0 +1,67 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 82a57f72-99e2-405e-add5-529df6c4ca69
+  bundle: recipes_recipe
+  default_langcode: en
+  depends:
+    b89cc383-6e2f-4529-b808-53846d53419d: media
+    25902741-ccb6-4cb6-abec-c3302254be92: node
+    1c27ba27-3a03-455d-a401-9a6e28d263ee: node
+    93338aa1-a0fd-432f-8904-0b4a8f796547: node
+    4be7b914-cf75-4d5a-a8df-22da227ef82b: node
+    9b46f847-65d2-4952-86f3-f5375f98eb07: node
+    73a8eb76-fdfc-4768-8c0b-3524509c7e63: node
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Indian Pumpkin Curry'
+  created:
+    -
+      value: 1781478212
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  path:
+    -
+      alias: /recipes/indian-pumpkin-curry
+      langcode: en
+      pathauto: 1
+  field_recipes_image:
+    -
+      entity: b89cc383-6e2f-4529-b808-53846d53419d
+  field_recipes_ingredients:
+    -
+      entity: 25902741-ccb6-4cb6-abec-c3302254be92
+    -
+      entity: 1c27ba27-3a03-455d-a401-9a6e28d263ee
+    -
+      entity: 93338aa1-a0fd-432f-8904-0b4a8f796547
+    -
+      entity: 4be7b914-cf75-4d5a-a8df-22da227ef82b
+    -
+      entity: 9b46f847-65d2-4952-86f3-f5375f98eb07
+    -
+      entity: 73a8eb76-fdfc-4768-8c0b-3524509c7e63
+  field_recipes_steps:
+    -
+      value: '<p>Heat&nbsp;<ingredient data-id="25902741-ccb6-4cb6-abec-c3302254be92">&nbsp;</ingredient>&nbsp;in a pan over medium heat and sauté the&nbsp;<ingredient data-id="1c27ba27-3a03-455d-a401-9a6e28d263ee">&nbsp;</ingredient>,&nbsp;<ingredient data-id="93338aa1-a0fd-432f-8904-0b4a8f796547">&nbsp;</ingredient>, and&nbsp;<ingredient data-id="4be7b914-cf75-4d5a-a8df-22da227ef82b">&nbsp;</ingredient>&nbsp;for about 4-5 minutes.</p>'
+      format: recipes_step
+    -
+      value: '<p>Stir in&nbsp;<ingredient data-id="9b46f847-65d2-4952-86f3-f5375f98eb07">&nbsp;</ingredient>&nbsp;and sauté for a further 1 minute.</p>'
+      format: recipes_step
+    -
+      value: '<p>Add the&nbsp;<ingredient data-id="73a8eb76-fdfc-4768-8c0b-3524509c7e63">&nbsp;</ingredient>. Stir to combine.</p>'
+      format: recipes_step

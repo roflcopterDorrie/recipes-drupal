@@ -13,6 +13,7 @@ module:
   ckeditor5: 0
   comment: 0
   config: 0
+  config_ignore: 0
   contextual: 0
   core_event_dispatcher: 0
   datetime: 0
@@ -38,7 +39,6 @@ module:
   menu_link_content: 0
   menu_ui: 0
   mysql: 0
-  navigation: 0
   node: 0
   options: 0
   page_cache: 0
@@ -55,6 +55,7 @@ module:
   taxonomy: 0
   text: 0
   token: 0
+  toolbar: 0
   update: 0
   user: 0
   views_event_dispatcher: 0

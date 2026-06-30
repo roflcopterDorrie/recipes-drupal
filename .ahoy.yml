@@ -16,14 +16,27 @@ usage: "Development workflow commands for your project"
 
 commands:
  
-  test:
-    usage: Run the test suite
+  local-test:
+    usage: Run the test suite locally
+    cmd: |
+      echo "Running tests locally..."
+      npx playwright test --project=local
+
+  prod-test:
+    usage: Run the test suite against a prod like
     cmd: |
       echo "Running tests..."
-      ./.scripts/run-tests.sh
+      npx playwright test --project=prod
 
-  build:
+  prod-build:
     usage: Build the application
     cmd: |
       echo "Building application..."
       ./.docker/test/build.sh
+
+  prod-build-and-test:
+    usage: Build the application and run tests
+    cmd: |
+      echo "Building and testing..."
+      ./.docker/test/build.sh
+      npx playwright test --project=prod

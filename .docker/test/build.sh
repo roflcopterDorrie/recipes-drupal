@@ -26,10 +26,3 @@ docker compose -f ./.docker/test/docker-compose.yml exec -it drupal drush en rec
 # Create a recipe user.
 docker compose -f ./.docker/test/docker-compose.yml exec -it drupal drush user:create recipe_user --mail="example@example.com" --password="password"
 docker compose -f ./.docker/test/docker-compose.yml exec -it drupal drush user:role:add recipes_user recipe_user
-
-# Run playwright tests
-DDEV_IP=$(ddev exec ip route | grep default | awk '{print $3}')
-if [ -z "$DDEV_IP" ]; then
-    exit 1
-fi
-ddev exec BASE_URL="http://${DDEV_IP}:9080" npx playwright test

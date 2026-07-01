@@ -1,9 +1,8 @@
-
 /* MENU */
 nav {
-    h2 {
-        display: none;
-    }
+  h2 {
+    display: none;
+  }
 }
 
 .recipes-nav {
@@ -15,7 +14,7 @@ nav {
   padding: 0 0.5rem;
   align-items: left;
   box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
- 
+
   @media (min-width: 768px) {
     flex-direction: row;
     align-items: center;
@@ -46,6 +45,7 @@ nav {
       display: none;
     }
   }
+
   @media (min-width: 768px) {
     display: block;
   }
@@ -54,10 +54,11 @@ nav {
 .recipes-logo {
   display: block;
   height: auto;
-  width: 20px;  
+  width: 20px;
+
   @media (min-width: 768px) {
-    height: 55px; 
-    width: auto;  
+    height: 55px;
+    width: auto;
   }
 }
 
@@ -68,7 +69,7 @@ nav {
 .recipes-nav-items {
   display: none;
 
-  align-items: left;       
+  align-items: left;
   justify-content: flex-start;
   flex-direction: column;
   margin: 0 0rem 0 -0.5rem;
@@ -82,50 +83,102 @@ nav {
   background-color: #ffffff;
 }
 
-.recipes-nav-items > ul {
+.recipes-nav-items>ul {
   flex-direction: column;
-  
+
   list-style: none;
   display: flex;
   gap: 0.5rem;
   padding: 0;
-  margin: 0; 
+  margin: 0;
 
   @media (min-width: 768px) {
     flex-direction: row;
-    height: 70px; 
+    height: 70px;
     align-items: center;
     gap: 2rem;
   }
 }
 
-.recipes-nav-items > ul li {
+.recipes-nav-items>ul li {
   padding: 0.5rem 0;
+
   @media (min-width: 768px) {
     margin: 0;
     padding: 0;
   }
 }
 
-.recipes-nav-items > ul li a {
+.recipes-nav-items>ul li a {
   text-decoration: none;
   color: #666666;
   font-size: 0.95rem;
   font-weight: 500;
   padding: 8px 0;
   transition: color 0.2s ease, border-color 0.2s ease;
-  border-bottom: 2px solid transparent; /* Prevents shifting layouts on hover */
+  border-bottom: 2px solid transparent;
+  /* Prevents shifting layouts on hover */
 }
 
 /* 5. Interactive States */
-.recipes-nav-items > ul li a:hover,
-.recipes-nav-items > ul li a:focus {
+.recipes-nav-items>ul li a:hover,
+.recipes-nav-items>ul li a:focus {
   color: #1a1a1a;
-  border-bottom-color: #0066cc; /* Clean accent color underline on hover */
+  border-bottom-color: #0066cc;
+  /* Clean accent color underline on hover */
 }
 
 /* Active Drupal Route Highlight (Applies when a user is on that specific page) */
-.recipes-nav-items > ul li a.is-active {
+.recipes-nav-items>ul li a.is-active {
   color: #0066cc;
   border-bottom-color: #0066cc;
+}
+
+
+/* Tabs */
+#block-recipes-theme-tabs {
+  >ul {
+    display: flex;
+    list-style: none;
+    margin: 0 0 0 0;
+    padding: 0;
+
+    li {
+      background: white;
+      padding: 0;
+      border: 1px solid #e5e5e5;
+      border-collapse: collapse;
+
+      a {
+
+        display: inline-block;
+        text-decoration: none;
+        background: white;
+        padding: 0.5rem 0.75rem;
+        @media (min-width: 768px) {
+          padding: 0.75rem 1rem;
+        }
+        color: var(--text-color);
+
+        border-bottom: 3px solid white;
+
+        &.is-active {
+          background: #ffddcd;
+          border-bottom: 3px solid var(--secondary-color);
+        }
+
+        &:hover {
+          background: #ffddcd;
+          border-bottom: 3px solid #ffddcd;
+
+          &.is-active {
+            background: #ffddcd;
+            border-bottom: 3px solid var(--secondary-color);
+          }
+        }
+      }
+
+
+    }
+  }
 }

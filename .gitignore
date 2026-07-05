@@ -22,3 +22,14 @@
 .idea/
 .vscode/
 Thumbs.db
+
+# Playwright
+node_modules/
+/playwright/test-results
+/test-results/
+/playwright/playwright-report
+/playwright-report/
+/playwright/blob-report
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/

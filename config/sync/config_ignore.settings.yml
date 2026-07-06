@@ -4,3 +4,4 @@ mode: simple
 ignored_config_entities:
   - gemini_provider.settings
   - key.key.gemini_api_key
+  - system.performance

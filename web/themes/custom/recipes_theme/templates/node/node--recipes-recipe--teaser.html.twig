@@ -68,7 +68,8 @@
       <img src="/{{ directory }}/images/default_recipe.jpg" />
     {% endif %}
     <h2 class="recipe-card__title">{{ label }}</h2>
-    {{ content|without('field_recipes_image') }} 
+    {{ content|without('field_recipes_image','recipe_actions') }} 
   </a>
+  {{ content.recipe_actions }}
 </article>
 

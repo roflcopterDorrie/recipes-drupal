@@ -42,7 +42,6 @@ export default defineConfig({
       name: "local",
       use: { baseURL: "http://recipes-drupal.ddev.site:10823/" },
     },
-
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },

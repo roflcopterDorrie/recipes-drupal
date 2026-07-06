@@ -45,6 +45,7 @@ default_container_timeout: "240"
 #   MySQL versions can be 5.5-8.0, 8.4
 #   PostgreSQL versions can be 9-18
 
+router_http_port: 10823
 # router_http_port: <port>  # Port to be used for http (defaults to global configuration, usually 80)
 # router_https_port: <port> # Port for https (defaults to global configuration, usually 443)
 

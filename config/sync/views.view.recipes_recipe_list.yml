@@ -1,7 +1,11 @@
+uuid: 8bd95d3d-4174-4c50-8bf3-f49381674152
 langcode: en
 status: true
 dependencies:
+  config:
+    - user.role.administrator
   module:
+    - node
     - recipes
     - user
   enforced:
@@ -110,7 +114,18 @@ display:
       cache:
         type: tag
         options: {  }
-      empty: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: 'No recipes in your list.'
+          tokenize: false
       sorts: {  }
       arguments:
         uid:
@@ -141,11 +156,17 @@ display:
             sort_order: asc
             number_of_records: 0
             format: default_summary
-          specify_validation: false
+          specify_validation: true
           validate:
-            type: none
+            type: 'entity:user'
             fail: 'not found'
-          validate_options: {  }
+          validate_options:
+            access: true
+            operation: view
+            multiple: 0
+            restrict_roles: true
+            roles:
+              administrator: administrator
           break_phrase: false
           not: false
       filters: {  }
@@ -167,10 +188,22 @@ display:
         options:
           query_comment: ''
           disable_sql_rewrite: false
-          distinct: false
+          distinct: true
           replica: false
           query_tags: {  }
-      relationships: {  }
+      relationships:
+        recipes_target_id:
+          id: recipes_target_id
+          table: recipes_recipe_list__recipes
+          field: recipes_target_id
+          relationship: none
+          group_type: group
+          admin_label: Content
+          entity_type: recipes_recipe_list
+          entity_field: recipes
+          plugin_id: standard
+          required: true
+      group_by: true
       header:
         area_text_custom:
           id: area_text_custom
@@ -183,7 +216,18 @@ display:
           empty: false
           content: '<a href="/recipes/make-shopping-list" class="button">Make shopping list</a>'
           tokenize: false
-      footer: {  }
+      footer:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: false
+          content: '<a href="/recipes/my-list/clear" class="button">Clear</a>'
+          tokenize: false
       display_extenders: {  }
     cache_metadata:
       max-age: -1

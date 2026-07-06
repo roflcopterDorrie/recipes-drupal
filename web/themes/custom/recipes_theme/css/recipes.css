@@ -30,6 +30,7 @@
       width: 100%;
       height: auto;
       margin-bottom: 1rem;
+      max-width: 30rem;
     }
   }
 
@@ -258,8 +259,4 @@ ol.steps {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
   }
-}
-
-.recipes-button {
-  font-size: 0;
 }

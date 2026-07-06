@@ -84,3 +84,7 @@ node_modules/
 /drush
 /drupal.phar
 /drupal
+
+/.ddev/*
+!/.ddev/config.yaml
+!/.ddev/docker-compose.override.yaml

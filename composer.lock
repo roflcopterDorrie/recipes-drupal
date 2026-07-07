@@ -5563,16 +5563,16 @@
         },
         {
             "name": "roflcopterdorrie/recipes",
-            "version": "0.1.10",
+            "version": "0.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roflcopterDorrie/recipes.git",
-                "reference": "c058b4e53c3a548e2839fc20241659e891530945"
+                "reference": "5e9f4d1cfa42574f96120cf9b972e529d6137229"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roflcopterDorrie/recipes/zipball/c058b4e53c3a548e2839fc20241659e891530945",
-                "reference": "c058b4e53c3a548e2839fc20241659e891530945",
+                "url": "https://api.github.com/repos/roflcopterDorrie/recipes/zipball/5e9f4d1cfa42574f96120cf9b972e529d6137229",
+                "reference": "5e9f4d1cfa42574f96120cf9b972e529d6137229",
                 "shasum": ""
             },
             "require": {
@@ -5595,9 +5595,9 @@
             "description": "A recipe module for Drupal that allows users to quickly create and manage recipes.",
             "support": {
                 "issues": "https://github.com/roflcopterDorrie/recipes/issues",
-                "source": "https://github.com/roflcopterDorrie/recipes/tree/0.1.10"
+                "source": "https://github.com/roflcopterDorrie/recipes/tree/0.1.11"
             },
-            "time": "2026-07-02T23:27:09+00:00"
+            "time": "2026-07-06T23:45:41+00:00"
         },
         {
             "name": "sebastian/diff",

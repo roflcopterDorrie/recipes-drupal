@@ -1,5 +1,6 @@
 body {
-  font-family: 'Cabin', serif;
+  /*font-family: 'Cabin', serif;*/
+  font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
   color: var(--text-color);
   font-size: 1.25em;
   margin: 0;

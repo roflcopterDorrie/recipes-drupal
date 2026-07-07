@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see \Drupal\Core\Form\FormPreprocess::preprocessForm()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="toggle-switch">
+  <input type="checkbox" id="recipes_wake_lock" checked="checked"/>
+  <label for="recipes_wake_lock"></label>
+  <span class="label">Keep screen awake</span>
+</div>
+<form{{ attributes }}>
+  {{ children }}
+</form>

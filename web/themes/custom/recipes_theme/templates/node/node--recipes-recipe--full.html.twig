@@ -62,6 +62,7 @@
 <article{{ attributes.addClass("recipe") }}>
   <h1>{{ label }}</h1>
   <div class="recipe-details">
+    {{ include('@recipes_theme/custom/wake-lock.html.twig') }}
     {{ content }}
   </div>
 </article>

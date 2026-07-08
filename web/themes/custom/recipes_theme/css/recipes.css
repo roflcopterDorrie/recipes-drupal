@@ -263,3 +263,10 @@ ol.steps {
     gap: 1rem;
   }
 }
+
+div.wake-lock {
+  display: block;
+  @media (min-width: 768px) {
+    display: none;
+  }
+}

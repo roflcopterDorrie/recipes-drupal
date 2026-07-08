@@ -9,7 +9,6 @@ function recipes_theme_preprocess_form(array &$variables) {
   if (isset($element['#form_id'])) {
     switch ($element['#form_id']) {
       case 'recipes_shopping_list_form':
-        $variables['#attached']['library'][] = 'recipes_theme/wake_lock';
       case 'recipes_make_shopping_list_form':
         $variables['#attached']['library'][] = 'recipes_theme/shopping_list';
         break;

@@ -48,6 +48,12 @@
             };
 
             document.addEventListener('visibilitychange', handleVisibilityChange);
+
+            // Make sure the toggle doesn't run on desktops, only mobile.
+            if (window.innerWidth > 768) {
+              toggle.checked = false;
+            }
+
           })();
         });
       }

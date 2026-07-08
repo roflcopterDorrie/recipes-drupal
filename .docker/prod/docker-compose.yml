@@ -2,7 +2,7 @@ services:
 
   # This fixes the permissions on drupal_files so drupal can manage the files/ directory.
   volume_init:
-    image: recipes/drupal-local
+    image: ghcr.io/roflcopterdorrie/recipes-drupal-drupal:latest
     user: root
     entrypoint: [] # Clear the Drupal startup script so it just runs our command
     command: >
@@ -23,11 +23,12 @@ services:
   # Drupal.
   drupal:
     image: ghcr.io/roflcopterdorrie/recipes-drupal-drupal:latest
-    container_name: recipes_drupal
     restart: always
-    env_file: .env
+    env_file:
+      - .env
     volumes:
       - drupal_files:/opt/drupal/web/sites/default/files
+      - ./.env:/opt/drupal/.env:ro
     depends_on:
       db:
         condition: service_started
@@ -39,7 +40,6 @@ services:
   # Database.
   db:
     image: mariadb:10.11
-    container_name: recipes_db
     restart: always
     env_file: .env
     command: --transaction-isolation=READ-COMMITTED
@@ -49,7 +49,6 @@ services:
   # Web server.
   nginx:
     image: ghcr.io/roflcopterdorrie/recipes-drupal-nginx:latest
-    container_name: recipes_nginx
     restart: always
     ports:
       - 80:80
@@ -65,4 +64,3 @@ services:
 volumes:
   drupal_files:
   db_data:
-

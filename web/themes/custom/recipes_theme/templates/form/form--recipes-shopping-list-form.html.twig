@@ -12,11 +12,7 @@
  * @ingroup themeable
  */
 #}
-<div class="toggle-switch">
-  <input type="checkbox" id="recipes_wake_lock" checked="checked"/>
-  <label for="recipes_wake_lock"></label>
-  <span class="label">Keep screen awake</span>
-</div>
+{{ include('@recipes_theme/custom/wake-lock.html.twig') }}
 <form{{ attributes }}>
   {{ children }}
 </form>

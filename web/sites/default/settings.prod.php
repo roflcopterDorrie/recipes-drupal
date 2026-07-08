@@ -1,8 +1,13 @@
 <?php
 
-// phpcs:ignoreFile
+use Dotenv\Dotenv;
 
-// DDEV-created Drupal 10 settings.php from upstream default.settings.php
+// This assumes your .env file is one directory above settings.php (in your project root).
+// If your .env is in a different folder relative to settings.php, adjust the path.
+if (file_exists('/opt/drupal/.env')) {
+  $dotenv = Dotenv::createImmutable('/opt/drupal/');
+  $dotenv->safeLoad();
+}
 
 /**
  * @file
@@ -91,13 +96,13 @@
  * @endcode
  */
 $databases['default']['default'] = [
-  'database' => getenv('DRUPAL_DB_NAME') ?: 'drupal',
-  'username' => getenv('DRUPAL_DB_USER') ?: 'drupal',
-  'password' => getenv('DRUPAL_DB_PASSWORD') ?: 'drupal',
-  'host' => getenv('DRUPAL_DB_HOST') ?: 'db',
-  'port' => '3306',
-  'driver' => 'mysql',
-  'prefix' => '',
+  'database' => getenv('DRUPAL_DB_NAME'),
+  'username' => getenv('DRUPAL_DB_USER'),
+  'password' => getenv('DRUPAL_DB_PASSWORD'),
+  'host'     => getenv('DRUPAL_DB_HOST'),
+  'port'     => '3306',
+  'driver'   => 'mysql',
+  'prefix'   => '',
 ];
 
 /**
@@ -914,6 +919,8 @@ if (extension_loaded('redis')) {
   $settings['redis.connection']['interface'] = 'PhpRedis';
 }
 
-$settings['trusted_host_patterns'] = [
-  '^'.getenv('DRUPAL_TRUSTED_HOST').'$',
-];
+if (getenv('DRUPAL_TRUSTED_HOST')) {
+  $settings['trusted_host_patterns'] = [
+    '^' . preg_quote(getenv('DRUPAL_TRUSTED_HOST')) . '$',
+  ];
+}

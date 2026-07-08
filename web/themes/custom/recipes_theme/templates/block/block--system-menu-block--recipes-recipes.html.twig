@@ -37,8 +37,11 @@
 {{ attach_library('recipes_theme/navigation') }}
 <div class="recipes-nav">
   <div class="recipes-nav-controls">
+
     <img class="recipes-logo" src="/{{ directory }}/images/recipes-logo.png" />
     
+    <span class="page-title">{{ current_page_title }}</span>
+
     <button class="recipes-menu-toggle" aria-expanded="false" aria-controls="block-recipes-theme-recipes">
       <span class="material-symbols-outlined burger">menu</span>
     </button>

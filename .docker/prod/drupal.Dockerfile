@@ -3,7 +3,7 @@ FROM composer:2 as builder
 WORKDIR /opt/drupal 
 
 COPY composer.json composer.lock ./
-RUN composer install --no-dev --optimize-autoloader --no-interaction --ignore-platform-reqs --prefer-source
+RUN composer install --no-dev --optimize-autoloader --no-interaction --ignore-platform-reqs --prefer-dist
 # Ensure index.php and .htaccess are actually created
 RUN composer drupal:scaffold
 

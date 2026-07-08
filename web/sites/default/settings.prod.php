@@ -913,3 +913,7 @@ if (extension_loaded('redis')) {
   $settings['redis.connection']['port'] = 6379;
   $settings['redis.connection']['interface'] = 'PhpRedis';
 }
+
+$settings['trusted_host_patterns'] = [
+  '^'.getenv('DRUPAL_TRUSTED_HOST').'$',
+];

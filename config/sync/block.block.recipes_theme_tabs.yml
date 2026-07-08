@@ -1,4 +1,4 @@
-uuid: ea944c58-8000-479f-83c0-5fcafa112937
+uuid: 2227f64e-e61e-45d4-9a1c-393a310608d9
 langcode: en
 status: true
 dependencies:
@@ -7,7 +7,7 @@ dependencies:
 id: recipes_theme_tabs
 theme: recipes_theme
 region: content
-weight: -1
+weight: 0
 provider: null
 plugin: local_tasks_block
 settings:

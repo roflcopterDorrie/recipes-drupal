@@ -1,4 +1,4 @@
-uuid: 1705f39b-709c-4f42-b221-827c1e17cafd
+uuid: null
 langcode: en
 status: true
 dependencies:
@@ -24,7 +24,6 @@ label: 'Recipe user'
 weight: 4
 is_admin: false
 permissions:
-  - 'access administration pages'
   - 'create recipes_image media'
   - 'create recipes_ingredient content'
   - 'create recipes_recipe content'

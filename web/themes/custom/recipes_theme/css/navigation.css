@@ -54,11 +54,13 @@ nav {
   }
 
   .page-title {
-    font-weight: 500;
-    font-size: 1.25rem;
-    color: var(--primary-color);
-    @media (min-width: 768px) {
-      display: none;
+    h1 {
+      font-weight: 500;
+      font-size: 1.25rem;
+      color: var(--primary-color);
+      @media (min-width: 768px) {
+        display: none;
+      }
     }
   }
 

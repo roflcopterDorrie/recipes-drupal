@@ -5,19 +5,18 @@ nav {
   }
 }
 
-.recipes-nav {
+.recipes-navigation {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   background-color: #ffffff;
   margin-left: -0.5rem;
   margin-right: -0.5rem;
   padding: 0.5rem;
-  align-items: left;
   box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
+  justify-content: space-between;
+  position: relative;
 
   @media (min-width: 768px) {
-    flex-direction: row;
-    align-items: center;
     gap: 1rem;
     margin: 0 -2.5rem 0 -2rem;
     padding: 0 2rem;
@@ -26,131 +25,128 @@ nav {
   &.open {
     box-shadow: none;
 
-    .recipes-nav-items {
+    .links {
       display: flex;
       position: absolute;
+      top: 4rem;
       width: 100%;
       z-index: 100;
       box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
     }
   }
-}
 
-.recipes-nav-controls {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  nav {
+
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 0 0rem 0 -0.5rem;
+    padding: 0 0 1rem 1rem;
+
+    @media (min-width: 768px) {
+      display: flex;
+      position: relative;
+    }
+
+    background-color: white;
+  }
+
+  nav>ul {
+    flex-direction: column;
+
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      height: 70px;
+      align-items: center;
+      gap: 2rem;
+    }
+  }
+
+  nav>ul li {
+    padding: 0.5rem 0;
+
+    @media (min-width: 768px) {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  nav>ul li a {
+    text-decoration: none;
+    color: #666666;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 8px 0;
+    transition: color 0.2s ease, border-color 0.2s ease;
+    border-bottom: 2px solid transparent;
+    /* Prevents shifting layouts on hover */
+  }
+
+  nav>ul li a:hover,
+  nav>ul li a:focus {
+    color: #1a1a1a;
+    border-bottom-color: #0066cc;
+    /* Clean accent color underline on hover */
+  }
+
+  nav>ul li a.is-active {
+    color: #0066cc;
+    border-bottom-color: #0066cc;
+  }
+
+  .recipes-logo {
+    display: block;
+    height: auto;
+    width: 20px;
+
+    @media (min-width: 768px) {
+      height: 55px;
+      width: auto;
+    }
+  }
+
+  .links {
+    display: none;
+
+    flex-direction: column;
+
+    @media (min-width: 768px) {
+      flex-grow: 1;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+  }
 
   button {
     background: none;
     border: none;
+
     .burger {
       font-size: 2rem;
     }
+
     @media (min-width: 768px) {
       display: none;
     }
   }
 
-  .page-title {
-    h1 {
-      font-weight: 500;
-      font-size: 1.25rem;
-      color: var(--primary-color);
-      @media (min-width: 768px) {
-        display: none;
-      }
+  h1 {
+    font-weight: 500;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+
+    @media (min-width: 768px) {
+      display: none;
     }
   }
-
-  @media (min-width: 768px) {
-    display: block;
-  }
 }
 
-.recipes-logo {
-  display: block;
-  height: auto;
-  width: 20px;
-
-  @media (min-width: 768px) {
-    height: 55px;
-    width: auto;
-  }
-}
-
-.recipes-navigation-menu {
-  display: none;
-}
-
-.recipes-nav-items {
-  display: none;
-
-  align-items: left;
-  justify-content: flex-start;
-  flex-direction: column;
-  margin: 0 0rem 0 -0.5rem;
-  padding: 0 0 1rem 1rem;
-
-  @media (min-width: 768px) {
-    display: flex;
-    position: relative;
-  }
-
-  background-color: #ffffff;
-}
-
-.recipes-nav-items>ul {
-  flex-direction: column;
-
-  list-style: none;
-  display: flex;
-  gap: 0.5rem;
-  padding: 0;
-  margin: 0;
-
-  @media (min-width: 768px) {
-    flex-direction: row;
-    height: 70px;
-    align-items: center;
-    gap: 2rem;
-  }
-}
-
-.recipes-nav-items>ul li {
-  padding: 0.5rem 0;
-
-  @media (min-width: 768px) {
-    margin: 0;
-    padding: 0;
-  }
-}
-
-.recipes-nav-items>ul li a {
-  text-decoration: none;
-  color: #666666;
-  font-size: 0.95rem;
-  font-weight: 500;
-  padding: 8px 0;
-  transition: color 0.2s ease, border-color 0.2s ease;
-  border-bottom: 2px solid transparent;
-  /* Prevents shifting layouts on hover */
-}
-
-/* 5. Interactive States */
-.recipes-nav-items>ul li a:hover,
-.recipes-nav-items>ul li a:focus {
-  color: #1a1a1a;
-  border-bottom-color: #0066cc;
-  /* Clean accent color underline on hover */
-}
-
-/* Active Drupal Route Highlight (Applies when a user is on that specific page) */
-.recipes-nav-items>ul li a.is-active {
-  color: #0066cc;
-  border-bottom-color: #0066cc;
-}
 
 
 /* Tabs */
@@ -174,9 +170,11 @@ nav {
         text-decoration: none;
         background: white;
         padding: 0.5rem 0.75rem;
+
         @media (min-width: 768px) {
           padding: 0.75rem 1rem;
         }
+
         color: var(--text-color);
 
         border-bottom: 3px solid white;

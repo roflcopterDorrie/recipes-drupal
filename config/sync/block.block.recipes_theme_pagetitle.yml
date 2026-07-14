@@ -1,0 +1,18 @@
+uuid: fcdaab32-c580-423d-b0c6-a2addf52f5ac
+langcode: en
+status: true
+dependencies:
+  theme:
+    - recipes_theme
+id: recipes_theme_pagetitle
+theme: recipes_theme
+region: header
+weight: -3
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

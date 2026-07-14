@@ -1,23 +1,23 @@
-uuid: 43ee00eb-368c-409c-a788-941dec9ce216
+uuid: 688226e0-250c-4dc3-afcf-7ef3bab16a94
 langcode: en
 status: true
 dependencies:
   config:
-    - system.menu.recipes-recipes
+    - system.menu.account
   module:
     - system
   theme:
     - recipes_theme
-id: recipes_theme_recipes
+id: recipes_theme_useraccountmenu
 theme: recipes_theme
 region: header
-weight: -2
+weight: -1
 provider: null
-plugin: 'system_menu_block:recipes-recipes'
+plugin: 'system_menu_block:account'
 settings:
-  id: 'system_menu_block:recipes-recipes'
-  label: Recipes
-  label_display: '0'
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  label_display: visible
   provider: system
   level: 1
   depth: null

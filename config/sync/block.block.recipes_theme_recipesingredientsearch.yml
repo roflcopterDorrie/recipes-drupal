@@ -10,7 +10,7 @@ dependencies:
 id: recipes_theme_recipesingredientsearch
 theme: recipes_theme
 region: content
-weight: 0
+weight: -2
 provider: null
 plugin: recipes_ingredient_search
 settings:

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "29531c61a642ade00ac52484e4af80e3",
+    "content-hash": "65a585be24ee3d7b79f30c20a710bea2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -881,96 +881,6 @@
                 "source": "https://github.com/dflydev/dflydev-dot-access-data/tree/v3.0.3"
             },
             "time": "2024-07-08T12:26:09+00:00"
-        },
-        {
-            "name": "doctrine/inflector",
-            "version": "2.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/inflector.git",
-                "reference": "6d6c96277ea252fc1304627204c3d5e6e15faa3b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/6d6c96277ea252fc1304627204c3d5e6e15faa3b",
-                "reference": "6d6c96277ea252fc1304627204c3d5e6e15faa3b",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.2 || ^8.0"
-            },
-            "require-dev": {
-                "doctrine/coding-standard": "^12.0 || ^13.0",
-                "phpstan/phpstan": "^1.12 || ^2.0",
-                "phpstan/phpstan-phpunit": "^1.4 || ^2.0",
-                "phpstan/phpstan-strict-rules": "^1.6 || ^2.0",
-                "phpunit/phpunit": "^8.5 || ^12.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Doctrine\\Inflector\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com"
-                },
-                {
-                    "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com"
-                }
-            ],
-            "description": "PHP Doctrine Inflector is a small library that can perform string manipulations with regard to upper/lowercase and singular/plural forms of words.",
-            "homepage": "https://www.doctrine-project.org/projects/inflector.html",
-            "keywords": [
-                "inflection",
-                "inflector",
-                "lowercase",
-                "manipulation",
-                "php",
-                "plural",
-                "singular",
-                "strings",
-                "uppercase",
-                "words"
-            ],
-            "support": {
-                "issues": "https://github.com/doctrine/inflector/issues",
-                "source": "https://github.com/doctrine/inflector/tree/2.1.0"
-            },
-            "funding": [
-                {
-                    "url": "https://www.doctrine-project.org/sponsorship.html",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://www.patreon.com/phpdoctrine",
-                    "type": "patreon"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Finflector",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2025-08-10T19:31:58+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -5700,21 +5610,60 @@
             "time": "2026-05-16T17:55:38+00:00"
         },
         {
-            "name": "roflcopterdorrie/recipes",
-            "version": "0.1.14",
+            "name": "roflcopterdorrie/pluralizer",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/roflcopterDorrie/recipes.git",
-                "reference": "1635d7fce6c393e064cef8aa038774a31814d960"
+                "url": "https://github.com/roflcopterDorrie/php-pluralizer.git",
+                "reference": "732775c168eca8ac36a02e40a6f485f0af553ca8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roflcopterDorrie/recipes/zipball/1635d7fce6c393e064cef8aa038774a31814d960",
-                "reference": "1635d7fce6c393e064cef8aa038774a31814d960",
+                "url": "https://api.github.com/repos/roflcopterDorrie/php-pluralizer/zipball/732775c168eca8ac36a02e40a6f485f0af553ca8",
+                "reference": "732775c168eca8ac36a02e40a6f485f0af553ca8",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "rachid/pluralizer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rachid Aachich",
+                    "email": "r.aachich@gmail.com"
+                },
+                {
+                    "name": "Dylan Rolfe",
+                    "email": "mr.dylan.rolfe@gmail.com"
+                }
+            ],
+            "description": "PHP Pluralizer, to convert English words between Singular and Plural. Fork of (https://github.com/rachid-aachich/php-pluralizer)",
+            "support": {
+                "source": "https://github.com/roflcopterDorrie/php-pluralizer/tree/1.0.1"
+            },
+            "time": "2026-07-21T05:10:03+00:00"
+        },
+        {
+            "name": "roflcopterdorrie/recipes",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/roflcopterDorrie/recipes.git",
+                "reference": "8747f359f3c2ff0f04bf3c531ac46c8856f890ca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/roflcopterDorrie/recipes/zipball/8747f359f3c2ff0f04bf3c531ac46c8856f890ca",
+                "reference": "8747f359f3c2ff0f04bf3c531ac46c8856f890ca",
                 "shasum": ""
             },
             "require": {
-                "doctrine/inflector": "^2.0",
                 "drupal/ai": "^1.3",
                 "drupal/better_exposed_filters": "^7.1",
                 "drupal/core_event_dispatcher": "^4.2",
@@ -5723,7 +5672,8 @@
                 "drupal/pathauto": "^1.15",
                 "drupal/views_event_dispatcher": "^4.2",
                 "opis/json-schema": "^2.0",
-                "php-units-of-measure/php-units-of-measure": "^2.1"
+                "php-units-of-measure/php-units-of-measure": "^2.1",
+                "roflcopterdorrie/pluralizer": "^1.0"
             },
             "type": "drupal-module",
             "notification-url": "https://packagist.org/downloads/",
@@ -5733,9 +5683,9 @@
             "description": "A recipe module for Drupal that allows users to quickly create and manage recipes.",
             "support": {
                 "issues": "https://github.com/roflcopterDorrie/recipes/issues",
-                "source": "https://github.com/roflcopterDorrie/recipes/tree/0.1.14"
+                "source": "https://github.com/roflcopterDorrie/recipes/tree/1.0.1"
             },
-            "time": "2026-07-12T23:52:10+00:00"
+            "time": "2026-07-21T05:18:26+00:00"
         },
         {
             "name": "sebastian/diff",

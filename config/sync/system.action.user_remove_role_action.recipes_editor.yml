@@ -1,0 +1,17 @@
+uuid: ccbc807b-9a41-427e-85ee-5370012acebd
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.recipes_editor
+  module:
+    - user
+  enforced:
+    module:
+      - recipes
+id: user_remove_role_action.recipes_editor
+label: 'Remove the Recipe editor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: recipes_editor

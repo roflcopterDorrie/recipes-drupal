@@ -1,0 +1,27 @@
+uuid: 727c2837-3c62-400a-9751-cf7b6b45f559
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.recipes_ingredient
+    - node.type.recipes_recipe
+  module:
+    - node
+    - recipes
+    - system
+  enforced:
+    module:
+      - recipes
+id: recipes_editor
+label: 'Recipe editor'
+weight: -7
+is_admin: false
+permissions:
+  - 'access content'
+  - 'administer recipe lists'
+  - 'create recipes_ingredient content'
+  - 'create recipes_recipe content'
+  - 'delete any recipes_recipe content'
+  - 'edit any recipes_ingredient content'
+  - 'edit any recipes_recipe content'
+  - 'manage own recipe lists'

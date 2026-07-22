@@ -13,20 +13,20 @@
     "require": {
         "composer/installers": "^2.3",
         "drupal/anonymous_login": "^2.2",
-        "drupal/better_exposed_filters": "^7.1",
+        "drupal/better_exposed_filters": "^7.1.2",
         "drupal/config_ignore": "^3.4",
-        "drupal/core-composer-scaffold": "^11.3",
-        "drupal/core-project-message": "^11.3",
-        "drupal/core-recipe-unpack": "^11.3",
-        "drupal/core-recommended": "^11.3",
-        "drupal/focal_point": "^2.1",
-        "drupal/gemini_provider": "^1.0",
-        "drupal/gin": "^5.0",
+        "drupal/core-composer-scaffold": "^11.4.4",
+        "drupal/core-project-message": "^11.4.4",
+        "drupal/core-recipe-unpack": "^11.4.4",
+        "drupal/core-recommended": "^11.4.4",
+        "drupal/focal_point": "^2.1.2",
+        "drupal/gemini_provider": "^1.0.1",
+        "drupal/gin": "^5.0.15",
         "drupal/redis": "^1.11",
-        "drupal/tagify": "^1.2",
-        "drush/drush": "^13.7",
+        "drupal/tagify": "^1.2.53",
+        "drush/drush": "^13.7.6",
         "roflcopterdorrie/recipes": "^1.0.1",
-        "vlucas/phpdotenv": "^5.6"
+        "vlucas/phpdotenv": "^5.6.4"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -83,7 +83,7 @@
         }
     },
     "require-dev": {
-        "drupal/ckeditor5_dev": "^2.0",
+        "drupal/ckeditor5_dev": "^2.0.1",
         "drupal/default_content": "^2.0@beta"
     }
 }

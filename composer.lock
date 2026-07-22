@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "65a585be24ee3d7b79f30c20a710bea2",
+    "content-hash": "b41e04d2abbc15105bf3893dd6fbfa98",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3994,16 +3994,16 @@
         },
         {
             "name": "mck89/peast",
-            "version": "v1.17.6",
+            "version": "v1.17.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mck89/peast.git",
-                "reference": "b8b4184b1e6912669f9af155caef9050509d9f18"
+                "reference": "89ee39f81e82cb7ed36cc5abaf2edd43cef71770"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mck89/peast/zipball/b8b4184b1e6912669f9af155caef9050509d9f18",
-                "reference": "b8b4184b1e6912669f9af155caef9050509d9f18",
+                "url": "https://api.github.com/repos/mck89/peast/zipball/89ee39f81e82cb7ed36cc5abaf2edd43cef71770",
+                "reference": "89ee39f81e82cb7ed36cc5abaf2edd43cef71770",
                 "shasum": ""
             },
             "require": {
@@ -4016,7 +4016,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.17.6-dev"
+                    "dev-master": "1.17.7-dev"
                 }
             },
             "autoload": {
@@ -4037,9 +4037,9 @@
             "description": "Peast is PHP library that generates AST for JavaScript code",
             "support": {
                 "issues": "https://github.com/mck89/peast/issues",
-                "source": "https://github.com/mck89/peast/tree/v1.17.6"
+                "source": "https://github.com/mck89/peast/tree/v1.17.7"
             },
-            "time": "2026-04-24T08:04:05+00:00"
+            "time": "2026-07-21T11:56:06+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -5611,22 +5611,22 @@
         },
         {
             "name": "roflcopterdorrie/pluralizer",
-            "version": "1.0.1",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roflcopterDorrie/php-pluralizer.git",
-                "reference": "732775c168eca8ac36a02e40a6f485f0af553ca8"
+                "reference": "854835d13575ddb0c5ccba10594f1c029360835a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roflcopterDorrie/php-pluralizer/zipball/732775c168eca8ac36a02e40a6f485f0af553ca8",
-                "reference": "732775c168eca8ac36a02e40a6f485f0af553ca8",
+                "url": "https://api.github.com/repos/roflcopterDorrie/php-pluralizer/zipball/854835d13575ddb0c5ccba10594f1c029360835a",
+                "reference": "854835d13575ddb0c5ccba10594f1c029360835a",
                 "shasum": ""
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "rachid/pluralizer\\": "src/"
+                    "roflcopterdorrie\\pluralizer\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -5645,22 +5645,22 @@
             ],
             "description": "PHP Pluralizer, to convert English words between Singular and Plural. Fork of (https://github.com/rachid-aachich/php-pluralizer)",
             "support": {
-                "source": "https://github.com/roflcopterDorrie/php-pluralizer/tree/1.0.1"
+                "source": "https://github.com/roflcopterDorrie/php-pluralizer/tree/1.0.3"
             },
-            "time": "2026-07-21T05:10:03+00:00"
+            "time": "2026-07-22T04:17:13+00:00"
         },
         {
             "name": "roflcopterdorrie/recipes",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roflcopterDorrie/recipes.git",
-                "reference": "8747f359f3c2ff0f04bf3c531ac46c8856f890ca"
+                "reference": "fbd82c615800387b2f2c13da7dfbb428b03ef6e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roflcopterDorrie/recipes/zipball/8747f359f3c2ff0f04bf3c531ac46c8856f890ca",
-                "reference": "8747f359f3c2ff0f04bf3c531ac46c8856f890ca",
+                "url": "https://api.github.com/repos/roflcopterDorrie/recipes/zipball/fbd82c615800387b2f2c13da7dfbb428b03ef6e6",
+                "reference": "fbd82c615800387b2f2c13da7dfbb428b03ef6e6",
                 "shasum": ""
             },
             "require": {
@@ -5683,9 +5683,9 @@
             "description": "A recipe module for Drupal that allows users to quickly create and manage recipes.",
             "support": {
                 "issues": "https://github.com/roflcopterDorrie/recipes/issues",
-                "source": "https://github.com/roflcopterDorrie/recipes/tree/1.0.1"
+                "source": "https://github.com/roflcopterDorrie/recipes/tree/1.0.2"
             },
-            "time": "2026-07-21T05:18:26+00:00"
+            "time": "2026-07-22T04:44:04+00:00"
         },
         {
             "name": "sebastian/diff",

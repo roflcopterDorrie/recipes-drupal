@@ -5611,22 +5611,22 @@
         },
         {
             "name": "roflcopterdorrie/pluralizer",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roflcopterDorrie/php-pluralizer.git",
-                "reference": "b28b0f044dbcb8cfa0243dba4d6deab505e635c5"
+                "reference": "854835d13575ddb0c5ccba10594f1c029360835a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roflcopterDorrie/php-pluralizer/zipball/b28b0f044dbcb8cfa0243dba4d6deab505e635c5",
-                "reference": "b28b0f044dbcb8cfa0243dba4d6deab505e635c5",
+                "url": "https://api.github.com/repos/roflcopterDorrie/php-pluralizer/zipball/854835d13575ddb0c5ccba10594f1c029360835a",
+                "reference": "854835d13575ddb0c5ccba10594f1c029360835a",
                 "shasum": ""
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "roflcopterdorrie/pluralizer\\": "src/"
+                    "roflcopterdorrie\\pluralizer\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -5645,22 +5645,22 @@
             ],
             "description": "PHP Pluralizer, to convert English words between Singular and Plural. Fork of (https://github.com/rachid-aachich/php-pluralizer)",
             "support": {
-                "source": "https://github.com/roflcopterDorrie/php-pluralizer/tree/1.0.2"
+                "source": "https://github.com/roflcopterDorrie/php-pluralizer/tree/1.0.3"
             },
-            "time": "2026-07-22T03:55:31+00:00"
+            "time": "2026-07-22T04:17:13+00:00"
         },
         {
             "name": "roflcopterdorrie/recipes",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roflcopterDorrie/recipes.git",
-                "reference": "8747f359f3c2ff0f04bf3c531ac46c8856f890ca"
+                "reference": "fbd82c615800387b2f2c13da7dfbb428b03ef6e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roflcopterDorrie/recipes/zipball/8747f359f3c2ff0f04bf3c531ac46c8856f890ca",
-                "reference": "8747f359f3c2ff0f04bf3c531ac46c8856f890ca",
+                "url": "https://api.github.com/repos/roflcopterDorrie/recipes/zipball/fbd82c615800387b2f2c13da7dfbb428b03ef6e6",
+                "reference": "fbd82c615800387b2f2c13da7dfbb428b03ef6e6",
                 "shasum": ""
             },
             "require": {
@@ -5683,9 +5683,9 @@
             "description": "A recipe module for Drupal that allows users to quickly create and manage recipes.",
             "support": {
                 "issues": "https://github.com/roflcopterDorrie/recipes/issues",
-                "source": "https://github.com/roflcopterDorrie/recipes/tree/1.0.1"
+                "source": "https://github.com/roflcopterDorrie/recipes/tree/1.0.2"
             },
-            "time": "2026-07-21T05:18:26+00:00"
+            "time": "2026-07-22T04:44:04+00:00"
         },
         {
             "name": "sebastian/diff",

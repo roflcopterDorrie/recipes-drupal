@@ -4,14 +4,10 @@ status: true
 dependencies:
   config:
     - node.type.recipes_ingredient
-    - taxonomy.vocabulary.recipes_ingredient_aisle
-  content:
-    - 'taxonomy_term:recipes_ingredient_aisle:4e78ae51-a863-410c-930b-3c4387c6e22d'
   module:
     - node
     - rest
     - serialization
-    - taxonomy
     - user
   enforced:
     module:
@@ -45,53 +41,6 @@ display:
           exclude: false
           alter:
             alter_text: false
-            make_link: false
-            absolute: false
-            word_boundary: false
-            ellipsis: false
-            strip_tags: false
-            trim: false
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: true
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        tid:
-          id: tid
-          table: taxonomy_term_field_data
-          field: tid
-          relationship: field_recipes_ingredient
-          group_type: group
-          admin_label: ''
-          entity_type: taxonomy_term
-          entity_field: tid
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
             text: ''
             make_link: false
             path: ''
@@ -108,8 +57,8 @@ display:
             target: ''
             nl2br: false
             max_length: 0
-            word_boundary: true
-            ellipsis: true
+            word_boundary: false
+            ellipsis: false
             more_link: false
             more_link_text: ''
             more_link_path: ''
@@ -130,8 +79,10 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: number_unformatted
-          settings: {  }
+          type: string
+          settings:
+            link_to_entity: false
+            link_rel: canonical
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -202,52 +153,6 @@ display:
           plugin_id: bundle
           value:
             recipes_ingredient: recipes_ingredient
-        field_recipes_ingredient_aisle_target_id:
-          id: field_recipes_ingredient_aisle_target_id
-          table: node__field_recipes_ingredient_aisle
-          field: field_recipes_ingredient_aisle_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: taxonomy_index_tid
-          operator: not
-          value:
-            - 20
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          vid: recipes_ingredient_aisle
-          type: textfield
-          hierarchy: false
-          limit: true
-          error_message: true
       style:
         type: serializer
       row:
@@ -265,16 +170,7 @@ display:
           distinct: false
           replica: false
           query_tags: {  }
-      relationships:
-        field_recipes_ingredient:
-          id: field_recipes_ingredient
-          table: node__field_recipes_ingredient
-          field: field_recipes_ingredient
-          relationship: none
-          group_type: group
-          admin_label: Ingredient
-          plugin_id: standard
-          required: true
+      relationships: {  }
       group_by: true
       header: {  }
       footer: {  }
@@ -286,6 +182,110 @@ display:
         - 'languages:language_interface'
         - request_format
         - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  entity_reference_1:
+    id: entity_reference_1
+    display_title: 'Entity Reference'
+    display_plugin: entity_reference
+    position: 2
+    display_options:
+      fields:
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: nid
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 0
+      style:
+        type: entity_reference
+        options:
+          search_fields:
+            nid: nid
+            title: '0'
+      row:
+        type: entity_reference
+        options:
+          default_field_elements: true
+          inline:
+            title: title
+            nid: nid
+          separator: '-'
+          hide_empty: false
+      defaults:
+        fields: false
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

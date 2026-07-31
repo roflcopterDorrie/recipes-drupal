@@ -5,11 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - node.type.recipes_recipe
-    - taxonomy.vocabulary.recipes_ingredient
   module:
     - better_exposed_filters
     - node
-    - taxonomy
     - user
   enforced:
     module:
@@ -211,35 +209,35 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        tid:
-          id: tid
-          table: taxonomy_term_field_data
-          field: tid
-          relationship: field_recipes_ingredient
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: field_recipes_ingredients
           group_type: group
           admin_label: ''
-          entity_type: taxonomy_term
-          entity_field: tid
-          plugin_id: taxonomy_index_tid
-          operator: or
-          value: {  }
+          entity_type: node
+          entity_field: title
+          plugin_id: string
+          operator: contains
+          value: ''
           group: 1
           exposed: true
           expose:
-            operator_id: tid_op
-            label: Term
+            operator_id: title_op
+            label: Ingredient
             description: ''
             use_operator: false
-            operator: tid_op
+            operator: title_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: tid
+            identifier: ingredient
             required: false
             remember: false
-            multiple: true
+            multiple: false
             remember_roles:
               authenticated: authenticated
-            reduce: false
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -252,12 +250,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          reduce_duplicates: false
-          vid: recipes_ingredient
-          type: select
-          hierarchy: false
-          limit: true
-          error_message: true
       style:
         type: default
         options:
@@ -284,18 +276,9 @@ display:
           field: field_recipes_ingredients
           relationship: none
           group_type: group
-          admin_label: 'Recipe Ingredients'
+          admin_label: Ingredients
           plugin_id: standard
-          required: true
-        field_recipes_ingredient:
-          id: field_recipes_ingredient
-          table: node__field_recipes_ingredient
-          field: field_recipes_ingredient
-          relationship: field_recipes_ingredients
-          group_type: group
-          admin_label: 'Ingredient taxonomy term'
-          plugin_id: standard
-          required: true
+          required: false
       css_class: ''
       use_ajax: true
       group_by: true

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b41e04d2abbc15105bf3893dd6fbfa98",
+    "content-hash": "d285bd7b27f7f2e2ab790180ceacdc9d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1897,6 +1897,66 @@
             }
         },
         {
+            "name": "drupal/entityreference_filter",
+            "version": "2.0.0-beta7",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/entityreference_filter.git",
+                "reference": "2.0.0-beta7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/entityreference_filter-2.0.0-beta7.zip",
+                "reference": "2.0.0-beta7",
+                "shasum": "15ff138c9545cd6db8747fc827bba7a45a708b3c"
+            },
+            "require": {
+                "drupal/core": "^10.3 || ^11",
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "drupal/better_exposed_filters": "^6 || ^7",
+                "drupal/search_api": "^1"
+            },
+            "suggest": {
+                "drupal/better_exposed_filters": "Allows rewriting of filter options via BEF settings.",
+                "drupal/search_api": "Enables the Search API integration submodule with the Search API variant of the filter."
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0-beta7",
+                    "datestamp": "1782563781",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Maxim Podorov",
+                    "homepage": "https://www.drupal.org/user/2463262",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Maxim Kashuba",
+                    "homepage": "https://www.drupal.org/user/515310",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Provides views-based filter for entity reference and entity id fields in views.",
+            "homepage": "https://drupal.org/project/entityreference_filter",
+            "support": {
+                "source": "https://git.drupalcode.org/project/entityreference_filter",
+                "issues": "https://www.drupal.org/project/issues/entityreference_filter"
+            }
+        },
+        {
             "name": "drupal/focal_point",
             "version": "2.1.2",
             "source": {
@@ -2581,6 +2641,77 @@
             "homepage": "https://www.drupal.org/project/redis",
             "support": {
                 "source": "https://git.drupalcode.org/project/redis"
+            }
+        },
+        {
+            "name": "drupal/search_api",
+            "version": "1.41.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/search_api.git",
+                "reference": "8.x-1.41"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.41.zip",
+                "reference": "8.x-1.41",
+                "shasum": "bb030951ee9a09fac67e8cde5b495c3b67e2949d"
+            },
+            "require": {
+                "drupal/core": "^10.3 || ^11"
+            },
+            "conflict": {
+                "drupal/search_api_solr": "2.* || 3.0 || 3.1"
+            },
+            "require-dev": {
+                "drupal/config_readonly": "1.x-dev",
+                "drupal/language_fallback_fix": "1.x-dev",
+                "drupal/search_api_autocomplete": "1.x-dev",
+                "drupal/search_api_db": "*"
+            },
+            "suggest": {
+                "drupal/facets": "Adds the ability to create faceted searches.",
+                "drupal/search_api_autocomplete": "Allows adding autocomplete suggestions to search fields.",
+                "drupal/search_api_solr": "Adds support for using Apache Solr as a backend."
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.41",
+                    "datestamp": "1780907071",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "branch-alias": {
+                    "dev-8.x-1.x": "1.x-dev"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas Seidl",
+                    "homepage": "https://www.drupal.org/u/drunken-monkey"
+                },
+                {
+                    "name": "Nick Veenhof",
+                    "homepage": "https://www.drupal.org/u/nick_vh"
+                },
+                {
+                    "name": "See other contributors",
+                    "homepage": "https://www.drupal.org/node/790418/committers"
+                }
+            ],
+            "description": "Provides a generic framework for modules offering search capabilities.",
+            "homepage": "https://www.drupal.org/project/search_api",
+            "support": {
+                "source": "https://git.drupalcode.org/project/search_api",
+                "issues": "https://www.drupal.org/project/issues/search_api",
+                "irc": "irc://irc.freenode.org/drupal-search-api"
             }
         },
         {
@@ -5610,57 +5741,17 @@
             "time": "2026-05-16T17:55:38+00:00"
         },
         {
-            "name": "roflcopterdorrie/pluralizer",
-            "version": "1.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/roflcopterDorrie/php-pluralizer.git",
-                "reference": "854835d13575ddb0c5ccba10594f1c029360835a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/roflcopterDorrie/php-pluralizer/zipball/854835d13575ddb0c5ccba10594f1c029360835a",
-                "reference": "854835d13575ddb0c5ccba10594f1c029360835a",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "roflcopterdorrie\\pluralizer\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Rachid Aachich",
-                    "email": "r.aachich@gmail.com"
-                },
-                {
-                    "name": "Dylan Rolfe",
-                    "email": "mr.dylan.rolfe@gmail.com"
-                }
-            ],
-            "description": "PHP Pluralizer, to convert English words between Singular and Plural. Fork of (https://github.com/rachid-aachich/php-pluralizer)",
-            "support": {
-                "source": "https://github.com/roflcopterDorrie/php-pluralizer/tree/1.0.3"
-            },
-            "time": "2026-07-22T04:17:13+00:00"
-        },
-        {
             "name": "roflcopterdorrie/recipes",
-            "version": "1.0.2",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roflcopterDorrie/recipes.git",
-                "reference": "fbd82c615800387b2f2c13da7dfbb428b03ef6e6"
+                "reference": "8c67b449b985e94bb2941d6f7919649835398971"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roflcopterDorrie/recipes/zipball/fbd82c615800387b2f2c13da7dfbb428b03ef6e6",
-                "reference": "fbd82c615800387b2f2c13da7dfbb428b03ef6e6",
+                "url": "https://api.github.com/repos/roflcopterDorrie/recipes/zipball/8c67b449b985e94bb2941d6f7919649835398971",
+                "reference": "8c67b449b985e94bb2941d6f7919649835398971",
                 "shasum": ""
             },
             "require": {
@@ -5672,8 +5763,7 @@
                 "drupal/pathauto": "^1.15",
                 "drupal/views_event_dispatcher": "^4.2",
                 "opis/json-schema": "^2.0",
-                "php-units-of-measure/php-units-of-measure": "^2.1",
-                "roflcopterdorrie/pluralizer": "^1.0"
+                "php-units-of-measure/php-units-of-measure": "^2.1"
             },
             "type": "drupal-module",
             "notification-url": "https://packagist.org/downloads/",
@@ -5683,9 +5773,9 @@
             "description": "A recipe module for Drupal that allows users to quickly create and manage recipes.",
             "support": {
                 "issues": "https://github.com/roflcopterDorrie/recipes/issues",
-                "source": "https://github.com/roflcopterDorrie/recipes/tree/1.0.2"
+                "source": "https://github.com/roflcopterDorrie/recipes/tree/v1.0.4"
             },
-            "time": "2026-07-22T04:44:04+00:00"
+            "time": "2026-07-31T03:58:56+00:00"
         },
         {
             "name": "sebastian/diff",
@@ -9213,7 +9303,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "drupal/default_content": 10
+        "drupal/default_content": 10,
+        "drupal/entityreference_filter": 10
     },
     "prefer-stable": true,
     "prefer-lowest": false,

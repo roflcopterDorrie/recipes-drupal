@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.recipes_ingredient.field_recipes_ingredient
     - field.field.node.recipes_ingredient.field_recipes_ingredient_aisle
     - field.field.node.recipes_ingredient.field_recipes_ingredient_amount
     - field.field.node.recipes_ingredient.field_recipes_ingredient_extra
@@ -21,14 +20,6 @@ targetEntityType: node
 bundle: recipes_ingredient
 mode: teaser
 content:
-  field_recipes_ingredient:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_recipes_ingredient_amount:
     type: string
     label: hidden

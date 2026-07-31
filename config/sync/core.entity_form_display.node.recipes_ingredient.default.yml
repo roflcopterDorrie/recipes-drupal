@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.recipes_ingredient.field_recipes_ingredient
     - field.field.node.recipes_ingredient.field_recipes_ingredient_aisle
     - field.field.node.recipes_ingredient.field_recipes_ingredient_amount
     - field.field.node.recipes_ingredient.field_recipes_ingredient_extra
@@ -18,16 +17,6 @@ targetEntityType: node
 bundle: recipes_ingredient
 mode: default
 content:
-  field_recipes_ingredient:
-    type: entity_reference_autocomplete_tags
-    weight: 2
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 0
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_recipes_ingredient_aisle:
     type: options_select
     weight: 3

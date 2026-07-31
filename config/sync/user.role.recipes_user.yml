@@ -7,7 +7,6 @@ dependencies:
     - media.type.recipes_image
     - node.type.recipes_ingredient
     - node.type.recipes_recipe
-    - taxonomy.vocabulary.recipes_ingredient
     - taxonomy.vocabulary.tags
   module:
     - filter
@@ -27,7 +26,6 @@ permissions:
   - 'create recipes_image media'
   - 'create recipes_ingredient content'
   - 'create recipes_recipe content'
-  - 'create terms in recipes_ingredient'
   - 'create terms in tags'
   - 'delete media'
   - 'delete own recipes_image media'

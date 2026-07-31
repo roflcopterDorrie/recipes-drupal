@@ -5,17 +5,31 @@ commands:
   - before: action
     when: [create]
     run:
+      # Make files directory.
       - mkdir -p ${PWD}/backup/drupal_files
-      - docker compose run --rm -v ${PWD}/backup/drupal_files:/backup_dir drupal sh -c "cp -a /opt/drupal/web/sites/default/files/. /backup_dir/"
+      
+      # Backup files.
+      - docker compose run --no-deps --rm -v ${PWD}/backup/drupal_files:/backup_dir drupal sh -c "cp -a /opt/drupal/web/sites/default/files/. /backup_dir/"
+      
+      # Dump database.
       - docker compose --env-file .env exec -T db sh -c 'mariadb-dump -u "$DRUPAL_DB_USER" -p"$DRUPAL_DB_PASSWORD" "$DRUPAL_DB_NAME"' > ${PWD}/backup/db_dump.sql
 
-# 3. Secure Encryption Passphrase
-encryption_passphrase: ${BORG_PASSPHRASE}
+# Secure Encryption Passphrase
+encryption_passphrase: CHANGEME
 
-# 5. Retention Policy (Pruning old backups automatically)
-keep_daily: 7
+compression: auto,zstd
+
+# Retention Policy
+keep_daily: 3
 keep_weekly: 4
-keep_monthly: 6
+keep_monthly: 12
+
+# Don't read whole repo each time
+skip_actions:
+    - check
+
+check_last: 3
 
 repositories:
-  - path: ${BORG_REPO}
+  - path: CHANGEME
+    label: "Backup on BorgBase"

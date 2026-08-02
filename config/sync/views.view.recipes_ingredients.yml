@@ -191,6 +191,7 @@ display:
     display_plugin: entity_reference
     position: 2
     display_options:
+      enabled: false
       fields:
         nid:
           id: nid

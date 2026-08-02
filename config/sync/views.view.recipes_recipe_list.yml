@@ -206,18 +206,7 @@ display:
           plugin_id: standard
           required: true
       group_by: true
-      header:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text_custom
-          empty: false
-          content: '<a href="/recipes/make-shopping-list" class="button">Make shopping list</a>'
-          tokenize: false
+      header: {  }
       footer:
         area_text_custom:
           id: area_text_custom
@@ -228,7 +217,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: false
-          content: '<a href="/recipes/my-list/clear" class="button">Clear</a>'
+          content: "<a href=\"/recipes/make-shopping-list\" class=\"button\">Make shopping list</a>\r\n<a href=\"/recipes/my-list/clear\" class=\"button\">Clear</a>"
           tokenize: false
       display_extenders: {  }
     cache_metadata:
